@@ -1,0 +1,52 @@
+.container{
+    margin-top:30px;
+}
+
+.filter-col{
+    padding-left:10px;
+    padding-right:10px;
+
+}
+.btn-info{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+/*Button sua va xóa*/
+.update{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.show{
+    visibility: hidden;
+    width: 60px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.update:hover .show{
+    visibility: visible;
+}
+.padd{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.padd img{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*End Button*/
