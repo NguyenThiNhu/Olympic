@@ -49,6 +49,19 @@
 
 		}
 
+
+		#backgroud_dabanh{
+			position: relative;
+			background-position: center;
+			width: inherit;
+			 min-height: 200px;
+			padding-left: 10%;
+			padding-right: 10%;
+			background-repeat: no-repeat;
+			background-image: url("{!!asset('public/Olympic/dabanh/nenfoo2t1.jpg')!!}");
+
+		}
+
 		#dapan{
 			position: relative;
 			margin: auto;
@@ -120,7 +133,25 @@
 
 </style>
 <script>
+
+
+
+
 	function dichuyen(e) {
+		if (document.getElementById('backgroud_dabanh' == null)) 
+			dichuyen_bancung(e);
+		else
+			dichuyen_dabanh(e);
+	}
+
+	function dichuyensai(e) {
+		if (document.getElementById('backgroud_dabanh' == null)) 
+			dichuyensai_bancung(e);
+		else
+			dichuyensai_dabanh(e);
+	}
+
+	function dichuyen_bancung(e) {
 	  var a = document.getElementById("hinh"); 
 	  var pos = 0;  
 	  var posx = 0;
@@ -144,17 +175,9 @@
 	    
 	  }
 	}
-	function setCorrectAnswer(e){
-		var answer = document.getElementById('dap_an1');
-		answer.style.backgroundColor = '#58FA58';
-	}
-	function setIncorrectAnswer(e){
-		console.log(e)
-		e.style.backgroundColor = "#FE2E2E";
-		setCorrectAnswer(e);
-	}
 
-	function dichuyensai(e) {
+
+	function dichuyensai_bancung(e) {
 	  var a = document.getElementById("hinh"); 
 	  var pos = 0;  
 	  var posx = 0;
@@ -180,6 +203,71 @@
 	  }
 	}
 
+	function dichuyen_dabanh(e) {
+	  var a = document.getElementById("hinh_dabanh"); 
+	  console.log(a);
+	  var pos = 0;  
+	  var posx = 0;
+	  var posy = 0;
+	  var id = setInterval(frame, 5);
+	  function frame() {
+	    if (pos == 250) {
+	      clearInterval(id);
+	      setCorrectAnswer(e);
+	      // setTimeout(() =>{
+	      // 		console.log("{!!url('bai-thi',[$stt+1])!!}")
+	      // 		window.location = "{!!url('bai-thi',[$stt+1])!!}";
+	      // }, 900);
+	      console.log('ss')
+	    } else {
+	      pos++;
+	      posx = pos-8;
+	      posy = pos;
+	      //a.style.top = posx + 'px'; 
+	      a.style.top = posx + 'px'; 
+	    }
+	    
+	  }
+	}
+
+	function dichuyensai_dabanh(e) {
+	  var a = document.getElementById("hinh_dabanh"); 
+	  var pos = 0;  
+	  var posx = 0;
+	  var posy = 0;
+	  var id = setInterval(frame, 5);
+	  function frame() {
+	    if (pos == 85) {
+	      clearInterval(id);
+	      setIncorrectAnswer(e);
+	      setTimeout(() =>{
+	      		console.log("{!!url('bai-thi',[$stt+1])!!}")
+	      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
+	      }, 900);
+	    } else {
+	      pos++;
+	      posx = pos;
+	      posy = 8*pos;
+	      a.style.top = posx + 'px'; 
+	      a.style.left = posy + 'px'; 
+	      
+	    }
+	   
+	  }
+	}
+
+	function setCorrectAnswer(e){
+		var answer = document.getElementById('dap_an1');
+		answer.style.backgroundColor = '#58FA58';
+	}
+	function setIncorrectAnswer(e){
+		console.log(e)
+		e.style.backgroundColor = "#FE2E2E";
+		setCorrectAnswer(e);
+	}
+
+	
+
 
 </script>
 
@@ -187,15 +275,30 @@
 <body>
 <!-- TL Dúng -->
 
-<div class="container">
+@if ($cauhoi->MA_LOAI ==1)
+    <div class="container">
 	
 	<div id="Cauhoi">
-		<div id="backgroud_bancung" style="text-align: center; font-weight: bold; font-size: 100px;">
-			
+			@if(0)
+			<div id="backgroud_bancung" style="text-align: center; font-weight: bold; font-size: 100px;">
+
 			 <div id ="khung" >
                   <div id ="hinh"><img style="height: 40px; width: 150px;" src="{!!asset('public/Olympic/Ban cung/ten2.png')!!}"/></div>
               </div>
-		</div>
+              </div>
+			@else
+			<div id="backgroud_dabanh" style="text-align: center; font-weight: bold; font-size: 100px;">
+
+				<div id ="khung" >
+					<div id ="hinh_thumon" style="padding-top: 100px;"><img style="height: 70px; width: 70px;" align="bottom" src="{!!asset('public/Olympic/dabanh/thumon.png')!!}"/></div>
+
+                  <div id ="hinh_dabanh" style="padding-top: 40px;"><img style="height: 70px; width: 70px;" align="bottom" src="{!!asset('public/Olympic/dabanh/ball.png')!!}"/></div>
+                  
+              	</div>
+
+              </div>
+			@endif
+		
 		<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
 		{!!$cauhoi->NOI_DUNG!!}
 		</div>
@@ -220,6 +323,28 @@
 	</div>
 
 </div>
+@elseif ($cauhoi->MA_LOAI ==2)
+    <div class="container">
+		
+
+	</div>
+@elseif ($cauhoi->MA_LOAI ==3)
+	<div class="container">
+	
+	
+
+	</div>
+@elseif ($cauhoi->MA_LOAI ==4)
+    <div class="container">
+	
+	<div id="tu-luan">
+	
+
+</div>
+@endif
+
+
+	
 {{-- <script>
 	$(document).ready(function(){
 		$('#dap_an1').click(function(){
@@ -227,49 +352,5 @@
 		});
 	});
 </script> --}}
-	
-<!-- 	<div class="container">
-		  	<div class="modal fade" id="myModal" role="dialog">
-		    	<div class="modal-dialog">
-			      <div class="modal-content">
-			       <div class="modal-header" style="color: blue;">
-			        <button type="button" class="close" data-dismiss="modal"></button>
-			        <h4 class="modal-title" >Thông Báo</h4>
-			      </div>
-			        <div class="modal-body">
-			          <p style="color: green;">Chúc mừng bạn!!!</p>
-			        </div>
-			        <div class="modal-footer">
-			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			           <a href="{!!url('bai-thi',[$stt])!!}" class="btn btn-primary" >Tiếp Tục</a>
-			        </div>
-			      </div>
-		      
-		    	</div>
-		  	</div>
-		</div>
-		<!--end TL ĐÚng-->
-<!-- Tk Sai-->
-	<!-- <div class="container">
-		  	<div class="modal fade" id="myModalSai" role="dialog">
-		    	<div class="modal-dialog">
-			      <div class="modal-content">
-			       <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal">&times;</button>
-			        <h4 class="modal-title" style="color: blue; ">Thông Báo</h4>
-			      </div>
-			        <div class="modal-body">
-			          <p style="color: red;">Sai Rồi!!!!!</p>
-			        </div>
-			        <div class="modal-footer">
-			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			           <a href="{!!url('bai-thi',[$stt])!!}" class="btn btn-primary" >Tiếp Tục</a>
-			        </div>
-			      </div>
-		      
-		    	</div>
-		  	</div>
-		</div> -->
 
- -->
 @endsection
