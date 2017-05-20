@@ -1,0 +1,135 @@
+<script language="javascript">
+
+var map=new Array(1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8) //luu id 2 hinh giong nhau co id cua hinh.
+var user=new Array(); 
+var temparray=new Array();
+var clickarray=new Array(0,0);
+var ticker, sec, min, ctr, id=0, oktoclick, finished;
+
+function init(){
+	clearTimeout(id);
+	for(i=0;i<=15;i++) user[i]=0;
+
+	ticker=0;
+	min=0;
+	sec=0; 
+	ctr=0; 
+	finished=0;
+	oktoclick=true;
+
+	document.forms["f"].b.value="Resetting game table...";
+
+	
+	id=setInterval('runclk()', 995); // run clock() count time 
+	scramble();
+	for(i=0;i<=15;i++){
+		document.images[('img'+i)].src="image"+map[i]+".gif";
+		//document.images[('img'+i)].alt='Image '+map[i]; //Tieu de hinh
+	}
+}
+
+//Tao dong ho
+function runclk(){
+	min=Math.floor(ticker/60); //So phut
+	sec=(ticker-(min*60))+''; //So giay
+	if(sec.length==1){sec="0"+sec}; //Cho so 0 o dau khi so giay tu 0 den 9
+	ticker++;
+	document.forms["f"].b.value="    "+min+":"+sec+"    "; //buttom thoi gian va resetting...
+	}
+
+//Tao random.
+function scramble(){
+	//for(z=0;z<5;z++){ //5 lan hoan doi mang hinh
+		for(x=0;x<=15;x++){
+			temparray[0]=Math.floor(Math.random()*16); 
+			console.log(map[1]);
+			//bien random
+			temparray[1]=map[temparray[0]]; //luu gia tri map o vi tri temparray[0] vao bien temparray[1]
+			temparray[2]=map[x]; //luu gia tri map o vi tri x vao bien temparray[2]
+			map[x]=temparray[1]; 
+			map[temparray[0]]=temparray[2];
+		}
+//	}
+	//console.log(temparray);
+}
+
+
+function select(but){
+	if(oktoclick){
+		oktoclick=false; 
+		document.images[('img'+but)].src='image0.gif'; //duong dan hinh khi chon.
+		document.images[('img'+but)].alt='Image '+ but; //Tieu de hinh
+		if(ctr==0){
+			ctr++;
+			clickarray[0]=but; //Chon lan thu 1
+			oktoclick=true;
+		}
+		else{
+			clickarray[1]=but; //Chon lan thu 2
+			ctr=0;
+			setTimeout('returntoold()', 600); //Time out 600 mili s
+		}	
+	}
+}
+
+//Dug de chon cau hoi
+function returntoold(){
+	if((clickarray[0]==clickarray[1])&&(!user[clickarray[0]])){
+
+		document.images[('img'+clickarray[0])].src="image"+map[clickarray[0]]+".gif"; //Tra lai hinh
+		//document.images[('img'+clickarray[0])].alt=""; Tieu de hinh
+		oktoclick=true;
+
+	}
+	else{
+		if(map[clickarray[0]]!=map[clickarray[1]]){
+
+			if(user[clickarray[0]]==0){
+				document.images[('img'+clickarray[0])].src="image"+map[clickarray[0]]+".gif"; //Tra lai hinh da chon lan 1
+				//document.images[('img'+clickarray[0])].alt=""; Tieu de hinh
+			}
+
+			if(user[clickarray[1]]==0){
+			document.images[('img'+clickarray[1])].src="image"+map[clickarray[1]]+".gif"; //Tra lai hinh da cho lan 2
+			//document.images[('img'+clickarray[1])].alt=""; Tieu de hinh
+			}
+		}
+
+		if(map[clickarray[0]]==map[clickarray[1]]){
+			if(user[clickarray[0]]==0&&user[clickarray[1]]==0)finished++; //xong
+			user[clickarray[0]]=1;
+			user[clickarray[1]]=1;
+		}
+
+
+		// Thong bao
+		if(finished>=8){
+			alert('You did it in '+document.forms["f"].b.value+' !');
+			init();
+		}
+
+		else{
+			oktoclick=true;
+		}
+	}
+}
+
+var t='<table cellpadding="0" cellspacing="0" border="0">';
+
+for(r=0;r<=3;r++){
+	t+='<tr>';
+	for(c=0;c<=3;c++)t+='<td align="center"><a href="javascript:select('+((4*r)+c)+')" onClick="this.blur()"><img src="image.gif" name="img'+((4*r)+c)+'" alt="" border="0" style="width: 150px; height: 150px"></a></td>';
+	t+='</tr>';
+}
+	t+='</table><br><br><form name="f"><input type="button" value="Downloading images...." name="b" onClick="init()"></form>';
+
+	document.write(t);
+
+	window.onload=init;
+
+
+</script>
+	<!--
+    	This script downloaded from www.JavaScriptBank.com
+    	Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
+	-->
