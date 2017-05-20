@@ -135,8 +135,10 @@ function dichuyen() {
     }
   }
 }
-</script>
-<script>
+function setCorrectAnswer(){
+	var answer = document.getElementById();
+	answer.style.background-color = "red";
+}
 function dichuyensai() {
   var a = document.getElementById("hinh"); 
   var pos = 0;  
@@ -202,7 +204,7 @@ function dichuyensai() {
 	});
 </script> --}}
 	
-	<div class="container">
+<!-- 	<div class="container">
 		  	<div class="modal fade" id="myModal" role="dialog">
 		    	<div class="modal-dialog">
 			      <div class="modal-content">
@@ -224,7 +226,7 @@ function dichuyensai() {
 		</div>
 		<!--end TL ĐÚng-->
 <!-- Tk Sai-->
-	<div class="container">
+	<!-- <div class="container">
 		  	<div class="modal fade" id="myModalSai" role="dialog">
 		    	<div class="modal-dialog">
 			      <div class="modal-content">
@@ -243,7 +245,7 @@ function dichuyensai() {
 		      
 		    	</div>
 		  	</div>
-		</div>
+		</div> -->
 
-
+ -->
 @endsection
