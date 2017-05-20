@@ -21,7 +21,7 @@ Smartphone Compatible wveb template, free webdesigns for Nokia, Samsung, LG, Son
 <!--js-->
 <script src="{!!asset('public/Olympic/js/jquery.min.js')!!}"></script>
 <script src="{!!asset('public/Olympic/js/bootstrap.min.js')!!}"></script>
-<!--js-->o
+<!--js-->
 <!--webfonts-->
 <link href="{!!asset('public/Olympic/css/cagliostro.css')!!}" rel="stylesheet" type="text/css">
 

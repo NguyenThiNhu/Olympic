@@ -26,7 +26,7 @@
 
 		
 		#text_cauhoi{
-
+			top: 20px;
 			text-align: center;
 			position: relative;
 			margin: auto;
@@ -34,7 +34,6 @@
 			padding: 20px;
 			border-radius: 10px;
 			background-color: #78d58b;
-			min-height: 150px;
 		}
 
 		
@@ -65,7 +64,6 @@
 			margin-bottom: 6%;
 			float: left;
 			position: relative;
-			min-height: 60px;
 			width: 100%;
 			background-color: #d1d1d1;
 			
@@ -113,50 +111,76 @@
 		  height: 10px;
 		  position: absolute;
 		  }
-    	
+    	.header-top{
+    		padding: 0px;
+    	}
+    	.navbar-default{
+    		padding: 10px;
+    	}
 
 </style>
 <script>
-function dichuyen() {
-  var a = document.getElementById("hinh"); 
-  var pos = 0;  
-  var posx = 0;
-  var posy = 0;
-  var id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 250) {
-      clearInterval(id);
-    } else {
-      pos++;
-      posx = pos;
-      posy = 2.5*pos;
-      //a.style.top = posx + 'px'; 
-      a.style.left = posy + 'px'; 
-    }
-  }
-}
-function setCorrectAnswer(){
-	var answer = document.getElementById();
-	answer.style.background-color = "red";
-}
-function dichuyensai() {
-  var a = document.getElementById("hinh"); 
-  var pos = 0;  
-  var posx = 0;
-  var posy = 0;
-  var id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 85) {
-      clearInterval(id);
-    } else {
-      pos++;
-      posx = pos;
-      posy = 8*pos;
-      a.style.top = posx + 'px'; 
-      a.style.left = posy + 'px'; 
-    }
-  }
-}
+	function dichuyen(e) {
+	  var a = document.getElementById("hinh"); 
+	  var pos = 0;  
+	  var posx = 0;
+	  var posy = 0;
+	  var id = setInterval(frame, 5);
+	  function frame() {
+	    if (pos == 250) {
+	      clearInterval(id);
+	      setCorrectAnswer(e);
+	      setTimeout(() =>{
+	      		console.log("{!!url('bai-thi',[$stt+1])!!}")
+	      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
+	      }, 900);
+	    } else {
+	      pos++;
+	      posx = pos;
+	      posy = 2.5*pos;
+	      //a.style.top = posx + 'px'; 
+	      a.style.left = posy + 'px'; 
+	    }
+	    
+	  }
+	}
+	function setCorrectAnswer(e){
+		var answer = document.getElementById('dap_an1');
+		answer.style.backgroundColor = '#58FA58';
+	}
+	function setIncorrectAnswer(e){
+		console.log(e)
+		e.style.backgroundColor = "#FE2E2E";
+		setCorrectAnswer(e);
+	}
+
+	function dichuyensai(e) {
+	  var a = document.getElementById("hinh"); 
+	  var pos = 0;  
+	  var posx = 0;
+	  var posy = 0;
+	  var id = setInterval(frame, 5);
+	  function frame() {
+	    if (pos == 85) {
+	      clearInterval(id);
+	      setIncorrectAnswer(e);
+	      setTimeout(() =>{
+	      		console.log("{!!url('bai-thi',[$stt+1])!!}")
+	      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
+	      }, 900);
+	    } else {
+	      pos++;
+	      posx = pos;
+	      posy = 8*pos;
+	      a.style.top = posx + 'px'; 
+	      a.style.left = posy + 'px'; 
+	      
+	    }
+	   
+	  }
+	}
+
+
 </script>
 
 
@@ -169,10 +193,10 @@ function dichuyensai() {
 		<div id="backgroud_bancung" style="text-align: center; font-weight: bold; font-size: 100px;">
 			
 			 <div id ="khung" >
-                  <div id ="hinh"><img style="height: 50px; width: 150px;" src="{!!asset('public/Olympic/Ban cung/ten2.png')!!}"/></div>
+                  <div id ="hinh"><img style="height: 40px; width: 150px;" src="{!!asset('public/Olympic/Ban cung/ten2.png')!!}"/></div>
               </div>
 		</div>
-		<div id	="text_cauhoi" style="color: white; font-size: 30px;" >
+		<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
 		{!!$cauhoi->NOI_DUNG!!}
 		</div>
 		<br>
@@ -185,9 +209,9 @@ function dichuyensai() {
 				@foreach( $dapan as $dapan)
 					<div class="col-sm-6">
 						@if($dapan->TRANGTHAI==1)
-						<button  data-toggle="modal" data-target="#myModal" onclick="dichuyen()" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-lg" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+						<button  data-toggle="modal" data-target="#myModal" onclick="dichuyen(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
 						@else
-						<button data-toggle="modal" data-target="#myModalSai" onclick="dichuyensai()" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-lg" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+						<button data-toggle="modal" data-target="#myModalSai" onclick="dichuyensai(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
 						@endif
 					</div>
 				@endforeach
