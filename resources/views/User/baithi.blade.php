@@ -1,4 +1,4 @@
-
+﻿
 @extends('User.master')
 @section('title', 'Bài Thi')
 @section('Carousel')
@@ -54,7 +54,7 @@
 			position: relative;
 			background-position: center;
 			width: inherit;
-			 min-height: 200px;
+			min-height: 200px;
 			padding-left: 10%;
 			padding-right: 10%;
 			background-repeat: no-repeat;
@@ -279,7 +279,7 @@
     <div class="container">
 	
 	<div id="Cauhoi">
-			@if(0)
+			@if(rand(0,1)==0)
 			<div id="backgroud_bancung" style="text-align: center; font-weight: bold; font-size: 100px;">
 
 			 <div id ="khung" >
@@ -293,7 +293,7 @@
 					<div id ="hinh_thumon" style="padding-top: 100px;"><img style="height: 70px; width: 70px;" align="bottom" src="{!!asset('public/Olympic/dabanh/thumon.png')!!}"/></div>
 
                   <div id ="hinh_dabanh" style="padding-top: 40px;"><img style="height: 70px; width: 70px;" align="bottom" src="{!!asset('public/Olympic/dabanh/ball.png')!!}"/></div>
-                  
+
               	</div>
 
               </div>
