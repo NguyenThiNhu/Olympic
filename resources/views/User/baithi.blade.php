@@ -58,7 +58,7 @@
 			padding-left: 10%;
 			padding-right: 10%;
 			background-repeat: no-repeat;
-			background-image: url("{!!asset('public/Olympic/dabanh/nenfoo2t1.jpg')!!}");
+			background-image: url("{!!asset('public/Olympic/dabanh/nenfoo2t.jpg')!!}");
 
 		}
 
@@ -131,6 +131,16 @@
     		padding: 10px;
     	}
 
+    	#hinh_dabanh{
+    		position: absolute;
+			top: 350px;
+			left: 300px;
+    	}
+    	#hinh_thumon{
+    		position: absolute;
+    		top: 160px;
+    	}
+
 </style>
 <script>
 
@@ -138,8 +148,12 @@
 
 
 	function dichuyen(e) {
-		if (document.getElementById('backgroud_dabanh' == null)) 
+		
+		if (document.getElementById('backgroud_dabanh' == null)){
+			console.log(document.getElementById('backgroud_dabanh'));
 			dichuyen_bancung(e);
+		} 
+			
 		else
 			dichuyen_dabanh(e);
 	}
@@ -208,23 +222,40 @@
 	  console.log(a);
 	  var pos = 0;  
 	  var posx = 0;
-	  var posy = 0;
+	  var current_top = 350;
+	 var width = 50;
+	 var height = 50;
+	 var right = 300;
+	 a.style.left = '300px';
+	  a.style.top = '350' + 'px'; 
+	   console.log(a.style + "555555s");
 	  var id = setInterval(frame, 5);
 	  function frame() {
-	    if (pos == 250) {
+	    if (pos == 240) {
 	      clearInterval(id);
 	      setCorrectAnswer(e);
-	      // setTimeout(() =>{
-	      // 		console.log("{!!url('bai-thi',[$stt+1])!!}")
-	      // 		window.location = "{!!url('bai-thi',[$stt+1])!!}";
-	      // }, 900);
+	      setTimeout(() =>{
+	      		console.log("{!!url('bai-thi',[$stt+1])!!}")
+	      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
+	      }, 900);
 	      console.log('ss')
 	    } else {
 	      pos++;
-	      posx = pos-8;
-	      posy = pos;
+	      current_top = current_top-1;
+	       console.log(current_top);
 	      //a.style.top = posx + 'px'; 
-	      a.style.top = posx + 'px'; 
+	      a.style.top = current_top + 'px'; 
+	      if (pos%50) {
+	      	a.style.left = right++ + 'px';
+	      }
+
+	      if (pos%8== 0) {
+	      	
+	      	width--;
+	      	height--;
+	      	a.style.width= width + 'px';
+	      	a.style.height= height + 'px';
+	      }
 	    }
 	    
 	  }
@@ -232,27 +263,69 @@
 
 	function dichuyensai_dabanh(e) {
 	  var a = document.getElementById("hinh_dabanh"); 
+	  console.log(a);
 	  var pos = 0;  
 	  var posx = 0;
-	  var posy = 0;
+	  var current_top = 350;
+	 var width = 50;
+	 var height = 50;
+	 var right = 300;
+	 a.style.left = '300px';
+	  a.style.top = '350' + 'px'; 
+	   console.log(a.style + "555555s");
 	  var id = setInterval(frame, 5);
 	  function frame() {
-	    if (pos == 85) {
+	    if (pos == 140) {
 	      clearInterval(id);
-	      setIncorrectAnswer(e);
-	      setTimeout(() =>{
-	      		console.log("{!!url('bai-thi',[$stt+1])!!}")
-	      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
-	      }, 900);
+	     
+	      console.log('ss')
+	      var id2 = setInterval(frame2, 1);
+	      pos = 0;
+	      posy = Number(a.style.left.split('p')[0]);
+	      console.log(posy);
+	      function frame2() {
+	      	  if (pos == 190) {
+	      	  		  console.log('ss')
+	      	  		 clearInterval(id2);
+	      	  		 setIncorrectAnswer(e);
+				      setTimeout(() =>{
+				      		console.log("{!!url('bai-thi',[$stt+1])!!}")
+				      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
+				      }, 900);
+	      	  }
+	      	  else
+	      	  {
+	      	  		pos++;
+				      
+				      //a.style.top = posx + 'px'; 
+				     a.style.left = posy++ + 'px'; 
+				     console.log(posy);
+
+				     if (pos%7 == 0) {
+				     	var pos_temp = Number(a.style.top.split('p')[0]) - 1
+				      	a.style.top = pos_temp + 'px';
+				      }
+	      	  }
+	      }
 	    } else {
 	      pos++;
-	      posx = pos;
-	      posy = 8*pos;
-	      a.style.top = posx + 'px'; 
-	      a.style.left = posy + 'px'; 
-	      
+	      current_top = current_top-1;
+	       //console.log(current_top);
+	      //a.style.top = posx + 'px'; 
+	      a.style.top = current_top + 'px'; 
+	      if (pos%50) {
+	      	a.style.left = right++ + 'px';
+	      }
+
+	      if (pos%8== 0) {
+	      	
+	      	width--;
+	      	height--;
+	      	a.style.width= width + 'px';
+	      	a.style.height= height + 'px';
+	      }
 	    }
-	   
+	    
 	  }
 	}
 
@@ -279,7 +352,7 @@
     <div class="container">
 	
 	<div id="Cauhoi">
-			@if(rand(0,1)==0)
+			@if(rand(0,1) == 0)
 			<div id="backgroud_bancung" style="text-align: center; font-weight: bold; font-size: 100px;">
 
 			 <div id ="khung" >
@@ -290,10 +363,10 @@
 			<div id="backgroud_dabanh" style="text-align: center; font-weight: bold; font-size: 100px;">
 
 				<div id ="khung" >
-					<div id ="hinh_thumon" style="padding-top: 100px;"><img style="height: 70px; width: 70px;" align="bottom" src="{!!asset('public/Olympic/dabanh/thumon.png')!!}"/></div>
-
-                  <div id ="hinh_dabanh" style="padding-top: 40px;"><img style="height: 70px; width: 70px;" align="bottom" src="{!!asset('public/Olympic/dabanh/ball.png')!!}"/></div>
-
+					
+					<img id ="hinh_thumon"  style="height: 70px;width: 70px;" align="bottom" src="{!!asset('public/Olympic/dabanh/thumon.png')!!}"/>
+                  <img  id ="hinh_dabanh" style="height: 50px;width: 50px;;" align="bottom" src="{!!asset('public/Olympic/dabanh/ball.png')!!}"/>
+                 
               	</div>
 
               </div>
