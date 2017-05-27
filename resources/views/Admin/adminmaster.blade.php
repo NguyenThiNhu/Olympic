@@ -17,13 +17,36 @@
 
 <!-- Nhúng datatable-->
 <link href="{!! asset('public/Admin/datatables-plugins/integration/bootstrap/1/dataTables.bootstrap.css')!!}" rel="stylesheet">
-<link href="{!! asset('public/Admin/datatables-plugins/integration/bootstrap/1/dataTables.bootstrap.min.css')!!}" rel="stylesheet">
 <link href="{!! asset('public/Admin/media/css/jquery.dataTables.css')!!}" rel="stylesheet">
 
-
+<!--js-->
+<script src="{!!asset('public/Olympic/js/jquery.min.js')!!}"></script>
 <script src="{!!asset('public/Admin/js/lumino.glyphs.js')!!}"></script>
 
-
+<style>
+	.image-preview-input {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+</style>
 
 </head>
 
@@ -52,7 +75,7 @@
 							
 		</div><!-- /.container-fluid -->
 	</nav>
-		
+	
 	<div id="sidebar-collapse" class="col-sm-2 col-lg-2 sidebar">
 
 		<form role="search">
@@ -75,8 +98,8 @@
 		</ul>
 		
 	</div>
-	<div class="col-sm-10">
-		<div class="content">
+	<div class="col-sm-offset-2 col-sm-10">
+		<div class="row">
 				@yield('content')
 		</div>
 	</div>

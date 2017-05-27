@@ -5,11 +5,8 @@
 @stop
 @section('content')
 
-
-<div class="templatemo-content-container col-sm-11 col-md-offset-3">
-		<div class="templatemo-site-header">
-   			<h1 style="text-align: center; background-color: #176cb0; color: white;">Quản Lý Trường</h1>
-  	</div>
+<div class="panel-heading" style="color:white;text-align:center;background-color:#176cb0; font-size: 34px;">Quản Lý Trường</div>
+<div class="templatemo-content-container col-sm-12">
 			<h3 style="color: black;">Danh sách trường</h3>
       <a href="{{url('them-truong')}}" class="btn btn-info" >Thêm trường</a>
       <br>

@@ -61,5 +61,20 @@ Route:: get('truong',['as'=>'Truong', 'uses'=>'Admin\Truong_Controller@lay_truon
 Route::get('them-truong',['as'=>'themtruong','uses'=>'Admin\Truong_Controller@trang_them_truong']);
 Route::post('them-truong',['as'=>'themtruong','uses'=>'Admin\Truong_Controller@them_truong']);
 
-Route:: get('de-thi',['as'=>'De-thi', 'uses'=>'Admin\De_Thi_Controller@lay_de_thi']);
-//Route:: post('de-thi',['as'=>'postDe_thi', 'uses'=>'User\Gop_Y_Controller@them_de_thi']);
+Route:: get('de-thi',['as'=>'ql_de_thi', 'uses'=>'Admin\De_Thi_Controller@lay_de_thi']);
+
+Route:: get('chi-tiet-de-thi/{id}',['as'=>'chi_tiet_de_thi', 'uses'=>'Admin\De_Thi_Controller@chi_tiet']);
+
+Route::get('xem-dap-an/{id}',['as'=>'xem_dap_an', 'uses'=>'Admin\De_Thi_Controller@dap_an']);
+
+Route::get('them-cau-hoi/{id}',['as'=>'them_cau_hoi', 'uses'=>'Admin\De_Thi_Controller@them_cau_hoi']);
+Route::post('them-cau-hoi/{id}',['as'=>'post_them_cau_hoi', 'uses'=>'Admin\De_Thi_Controller@post_them_cau_hoi']);
+
+Route::get('them-de-thi',['as'=>'them_de_thi','uses'=>'Admin\De_Thi_Controller@them_dethi']);
+Route::post('them-de-thi',['as'=>'post_them_de_thi','uses'=>'Admin\De_Thi_Controller@post_them_dethi']);
+//cap_nhat
+Route::get('cap-nhat-cau-hoi/{id}',['as'=>'cap_nhat_cau_hoi', 'uses'=>'Admin\De_Thi_Controller@cap_nhat_cau_hoi']);
+
+Route::post('cap-nhat-cau-hoi/{id}',['as'=>'post_cap_nhat_cau_hoi', 'uses'=>'Admin\De_Thi_Controller@post_cap_nhat']);
+//end_cap_nhat
+Route::get('xoa-cau-hoi/{id}',['as'=>'xoa_cau_hoi', 'uses'=>'Admin\De_Thi_Controller@xoa_cau_hoi']);

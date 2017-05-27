@@ -5,15 +5,12 @@
 @stop
 @section('content')
 
-
-<div class="templatemo-content-container col-sm-11 col-md-offset-3">
-		<div class="templatemo-site-header">
-   			<h1 style="text-align: center; background-color: #176cb0; color: white;">Quản Lý Loại Câu Hỏi</h1>
-  		</div>
-			<h3 style="color: black;">Danh sách loại câu hỏi</h3>
-      
-      <br>
-      <br>
+<div class="panel-heading" style="color:white;text-align:center;background-color:#176cb0; font-size: 34px;">Quản Lý Loại Câu Hỏi</div>
+<div class="templatemo-content-container col-sm-12">
+		<h1 style="color: black; text-align: center;">Danh sách loại câu hỏi</h1>
+    
+    <br>
+    <br>
 		<div class="templatemo-content-widget no-padding">
             <div class="panel panel-default table-responsive">
               <table class="table table-striped table-bordered templatemo-user-table dataTables">

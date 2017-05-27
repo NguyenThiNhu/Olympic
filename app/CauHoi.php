@@ -13,8 +13,6 @@ class CauHoi extends Model
     	'MA_DE',
     	'NOI_DUNG',
     	'TG_CAUHOI',
-    	'STT_VONG',
-    	'STT_CH'
 
     ];
 }

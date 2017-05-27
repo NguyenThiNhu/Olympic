@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2017 at 02:00 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.0.15
+-- Generation Time: May 27, 2017 at 02:03 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -53,9 +53,7 @@ CREATE TABLE `cau_hoi` (
   `MA_LOAI` int(10) UNSIGNED NOT NULL,
   `MA_DE` int(10) UNSIGNED NOT NULL,
   `NOI_DUNG` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `TG_CAUHOI` int(11) NOT NULL,
-  `STT_VONG` int(11) DEFAULT NULL,
-  `STT_CH` int(11) NOT NULL,
+  `TG_CAUHOI` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -64,81 +62,120 @@ CREATE TABLE `cau_hoi` (
 -- Dumping data for table `cau_hoi`
 --
 
-INSERT INTO `cau_hoi` (`MA_CH`, `MA_LOAI`, `MA_DE`, `NOI_DUNG`, `TG_CAUHOI`, `STT_VONG`, `STT_CH`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'What___your name?', 30, 1, 1, '2017-04-20 17:00:00', NULL),
-(2, 1, 1, 'How___you?', 10, 1, 2, '2017-04-25 17:00:00', NULL),
-(3, 1, 1, 'Do you … a cellphone', 30, 1, 3, NULL, NULL),
-(4, 1, 1, 'Nó là cây viết chì', 30, 1, 4, NULL, NULL),
-(5, 1, 1, 'How do you … your name?', 30, 1, 5, NULL, NULL),
-(6, 1, 1, 'In America, it is not ... to ask personal questions.', 30, 1, 6, NULL, NULL),
-(7, 1, 1, 'Why do not you make it bigger and more colourful to ... People is attention ?', 30, 1, 7, NULL, NULL),
-(8, 1, 1, 'Lets … hello to the teacher', 30, 1, 8, NULL, NULL),
-(9, 1, 1, 'There is … dog in my house', 30, 1, 9, NULL, NULL),
-(10, 1, 1, 'Give … a pen, please', 30, 1, 10, NULL, NULL),
-(11, 1, 3, 'I … reading a book', 30, 1, 11, NULL, NULL),
-(12, 1, 3, 'This care … for you, Mary. Thank you very much', 30, 1, 12, NULL, NULL),
-(13, 1, 3, 'Tommy is my friend. He is a … at Quang Trung primary school', 30, 1, 13, NULL, NULL),
-(14, 1, 3, 'Her hoise is … big', 30, 1, 14, NULL, NULL),
-(15, 1, 3, 'Yoko is … Japan', 30, 1, 15, NULL, NULL),
-(16, 1, 3, 'August is the eighth month … the year.', 30, 1, 16, NULL, NULL),
-(17, 1, 3, 'Draw … picture, please', 30, 1, 17, NULL, NULL),
-(18, 1, 3, 'I … watching television', 30, 1, 18, NULL, NULL),
-(19, 1, 3, 'My birthday is … May 5th', 30, 1, 19, NULL, NULL),
-(20, 1, 3, 'Hello, … Sean', 30, 1, 20, NULL, NULL),
-(21, 1, 4, 'How … desks are there in your classroom', 30, 1, 21, NULL, NULL),
-(22, 1, 4, 'I am from England. I am from England, …', 30, 1, 22, NULL, NULL),
-(23, 1, 4, 'I am … America', 30, 1, 23, NULL, NULL),
-(24, 1, 4, 'Thank you very much. You … welcome', 30, 1, 24, NULL, NULL),
-(25, 1, 4, 'Look at the … ,please', 30, 1, 25, NULL, NULL),
-(26, 1, 4, 'Where are you from, Alice?. … from Singapore', 30, 1, 26, NULL, NULL),
-(27, 1, 4, 'March is the … month of the year.', 30, 1, 27, NULL, NULL),
-(28, 1, 4, '… do you like Art?. Because I can learn how to draw a picture', 30, 1, 28, NULL, NULL),
-(29, 1, 4, 'The box … blue', 30, 1, 29, NULL, NULL),
-(30, 1, 4, 'His father is birthday is … November', 30, 1, 30, NULL, NULL),
-(31, 1, 5, 'Is that Peter?. Yes, …', 30, 1, 31, NULL, NULL),
-(32, 1, 5, 'How old is she?. She is ten … old.', 30, 1, 32, NULL, NULL),
-(33, 1, 5, 'What … is it?. It is 7:30 am', 30, 1, 33, NULL, NULL),
-(34, 1, 5, 'It is time to go … a walk', 30, 1, 34, NULL, NULL),
-(35, 1, 5, 'Nam gets up … 6 oclock every morning', 30, 1, 35, NULL, NULL),
-(36, 1, 5, 'What time do … go to school every day?. I go to school at 6:30', 30, 1, 36, NULL, NULL),
-(37, 1, 5, 'I … breakfast at 6.15 every morning', 30, 1, 37, NULL, NULL),
-(38, 1, 5, 'She … TV in the evening', 30, 1, 38, NULL, NULL),
-(39, 1, 5, 'What is his job?. He is … factory worker', 30, 1, 39, NULL, NULL),
-(40, 1, 6, 'This is a photo … my family', 30, 1, 40, NULL, NULL),
-(41, 1, 6, '… does your father do?. He is a doctor', 30, 1, 41, NULL, NULL),
-(42, 1, 6, 'My borther drives a bus. He is a bus …', 30, 1, 42, NULL, NULL),
-(43, 1, 6, '… does your mother work?. She works in a primary school', 30, 1, 43, NULL, NULL),
-(44, 1, 6, 'What is your … food?. I like chicken', 30, 1, 44, NULL, NULL),
-(45, 1, 6, '… you like some orange juice?. Yes, please. I love it', 30, 1, 45, NULL, NULL),
-(46, 1, 6, 'What … she like?. She is very nice', 30, 1, 46, NULL, NULL),
-(47, 1, 6, 'My mother is a … teacher. She is kind and friendly, too', 30, 1, 47, NULL, NULL),
-(48, 1, 6, 'What does he look like?. He looks …', 30, 1, 48, NULL, NULL),
-(49, 1, 6, 'What is Chrismas?. It is …', 30, 1, 49, NULL, NULL),
-(50, 1, 7, 'There … a lot of fun on festivals', 30, 1, 50, NULL, NULL),
-(51, 1, 7, 'We … our teachers and friends on Tet holidays', 30, 1, 51, NULL, NULL),
-(52, 1, 7, 'What are you going to do at Mid-Autumn?. I … the School Lantern Parade', 30, 1, 52, NULL, NULL),
-(53, 1, 7, 'He is very haapy … the New year is coming', 30, 1, 53, NULL, NULL),
-(54, 1, 7, '… is the fireworks display?. It is colorful and beautiful.', 30, 1, 54, NULL, NULL),
-(55, 1, 7, 'What … is this?. It is an elephant.', 30, 1, 55, NULL, NULL),
-(56, 1, 7, 'What are monkeys … ?. They are quick and clever', 30, 1, 56, NULL, NULL),
-(57, 1, 7, 'Bears like … fish,fruit and honey', 30, 1, 57, NULL, NULL),
-(58, 1, 7, 'Bears can … on two legs and move around', 30, 1, 58, NULL, NULL),
-(59, 1, 7, 'Lets go to the … I want some books', 30, 1, 59, NULL, NULL),
-(60, 1, 8, '… do you want to the post office?. Because I want some stamps', 30, 1, 60, NULL, NULL),
-(61, 1, 8, '… is she wearing?. She is wearing a pink dress', 30, 1, 61, NULL, NULL),
-(62, 1, 8, 'She … got brown hair', 30, 1, 62, NULL, NULL),
-(63, 1, 8, '… are Peter and Mary?. They are at the school party', 30, 1, 63, NULL, NULL),
-(64, 1, 8, 'I do not … TV in the morning', 30, 1, 64, NULL, NULL),
-(65, 1, 8, 'He works from 7.30 AM … 4.30PM', 30, 1, 65, NULL, NULL),
-(66, 1, 8, 'What … do you get up?. I get up at five', 30, 1, 66, NULL, NULL),
-(67, 1, 8, 'When is ChildrenDay?. It is on …', 30, 1, 67, NULL, NULL),
-(68, 1, 8, 'My mother is a …. She works in a hospital', 30, 1, 68, NULL, NULL),
-(69, 1, 8, 'Lets go to the … I want some medicine', 30, 1, 69, NULL, NULL),
-(70, 1, 9, 'There are English - Vietnamese …', 30, 1, 70, NULL, NULL),
-(71, 1, 9, 'My mother takes care of my house and looks … my baby sister', 30, 1, 71, NULL, NULL),
-(72, 1, 9, '… straight across the road', 30, 1, 72, NULL, NULL),
-(73, 1, 9, 'Are they students?. Yes,…', 30, 1, 73, NULL, NULL),
-(74, 1, 9, 'Can you speak English?. …', 30, 1, 74, NULL, NULL);
+INSERT INTO `cau_hoi` (`MA_CH`, `MA_LOAI`, `MA_DE`, `NOI_DUNG`, `TG_CAUHOI`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'What___your name?', 30, '2017-04-20 17:00:00', NULL),
+(2, 1, 1, 'How___you?', 10, '2017-04-25 17:00:00', NULL),
+(3, 1, 1, 'Do you … a cellphone', 30, NULL, NULL),
+(4, 1, 1, 'Nó là cây viết chì', 30, NULL, NULL),
+(5, 1, 1, 'How do you … your name?', 30, NULL, NULL),
+(6, 1, 1, 'In America, it is not ... to ask personal questions.', 30, NULL, NULL),
+(7, 1, 1, 'Why do not you make it bigger and more colourful to ... People is attention ?', 30, NULL, NULL),
+(8, 1, 1, 'Lets … hello to the teacher', 30, NULL, NULL),
+(9, 1, 1, 'There is … dog in my house', 30, NULL, NULL),
+(10, 1, 1, 'Give … a pen, please', 30, NULL, NULL),
+(11, 1, 3, 'I … reading a book', 30, NULL, NULL),
+(12, 1, 3, 'This care … for you, Mary. Thank you very much', 30, NULL, NULL),
+(13, 1, 3, 'Tommy is my friend. He is a … at Quang Trung primary school', 30, NULL, NULL),
+(14, 1, 3, 'Her hoise is … big', 30, NULL, NULL),
+(15, 1, 3, 'Yoko is … Japan', 30, NULL, NULL),
+(16, 1, 3, 'August is the eighth month … the year.', 30, NULL, NULL),
+(17, 1, 3, 'Draw … picture, please', 30, NULL, NULL),
+(18, 1, 3, 'I … watching television', 30, NULL, NULL),
+(19, 1, 3, 'My birthday is … May 5th', 30, NULL, NULL),
+(20, 1, 3, 'Hello, … Sean', 30, NULL, NULL),
+(21, 1, 4, 'How … desks are there in your classroom', 30, NULL, NULL),
+(22, 1, 4, 'I am from England. I am from England, …', 30, NULL, NULL),
+(23, 1, 4, 'I am … America', 30, NULL, NULL),
+(24, 1, 4, 'Thank you very much. You … welcome', 30, NULL, NULL),
+(25, 1, 4, 'Look at the … ,please', 30, NULL, NULL),
+(26, 1, 4, 'Where are you from, Alice?. … from Singapore', 30, NULL, NULL),
+(27, 1, 4, 'March is the … month of the year.', 30, NULL, NULL),
+(28, 1, 4, '… do you like Art?. Because I can learn how to draw a picture', 30, NULL, NULL),
+(29, 1, 4, 'The box … blue', 30, NULL, NULL),
+(30, 1, 4, 'His father is birthday is … November', 30, NULL, NULL),
+(31, 1, 5, 'Is that Peter?. Yes, …', 30, NULL, NULL),
+(32, 1, 5, 'How old is she?. She is ten … old.', 30, NULL, NULL),
+(33, 1, 5, 'What … is it?. It is 7:30 am', 30, NULL, NULL),
+(34, 1, 5, 'It is time to go … a walk', 30, NULL, NULL),
+(35, 1, 5, 'Nam gets up … 6 oclock every morning', 30, NULL, NULL),
+(36, 1, 5, 'What time do … go to school every day?. I go to school at 6:30', 30, NULL, NULL),
+(37, 1, 5, 'I … breakfast at 6.15 every morning', 30, NULL, NULL),
+(38, 1, 5, 'She … TV in the evening', 30, NULL, NULL),
+(39, 1, 5, 'What is his job?. He is … factory worker', 30, NULL, NULL),
+(40, 1, 6, 'This is a photo … my family', 30, NULL, NULL),
+(41, 1, 6, '… does your father do?. He is a doctor', 30, NULL, NULL),
+(42, 1, 6, 'My borther drives a bus. He is a bus …', 30, NULL, NULL),
+(43, 1, 6, '… does your mother work?. She works in a primary school', 30, NULL, NULL),
+(44, 1, 6, 'What is your … food?. I like chicken', 30, NULL, NULL),
+(45, 1, 6, '… you like some orange juice?. Yes, please. I love it', 30, NULL, NULL),
+(46, 1, 6, 'What … she like?. She is very nice', 30, NULL, NULL),
+(47, 1, 6, 'My mother is a … teacher. She is kind and friendly, too', 30, NULL, NULL),
+(48, 1, 6, 'What does he look like?. He looks …', 30, NULL, NULL),
+(49, 1, 6, 'What is Chrismas?. It is …', 30, NULL, NULL),
+(50, 1, 7, 'There … a lot of fun on festivals', 30, NULL, NULL),
+(51, 1, 7, 'We … our teachers and friends on Tet holidays', 30, NULL, NULL),
+(52, 1, 7, 'What are you going to do at Mid-Autumn?. I … the School Lantern Parade', 30, NULL, NULL),
+(53, 1, 7, 'He is very haapy … the New year is coming', 30, NULL, NULL),
+(54, 1, 7, '… is the fireworks display?. It is colorful and beautiful.', 30, NULL, NULL),
+(55, 1, 7, 'What … is this?. It is an elephant.', 30, NULL, NULL),
+(56, 1, 7, 'What are monkeys … ?. They are quick and clever', 30, NULL, NULL),
+(57, 1, 7, 'Bears like … fish,fruit and honey', 30, NULL, NULL),
+(58, 1, 7, 'Bears can … on two legs and move around', 30, NULL, NULL),
+(59, 1, 7, 'Lets go to the … I want some books', 30, NULL, NULL),
+(60, 1, 8, '… do you want to the post office?. Because I want some stamps', 30, NULL, NULL),
+(61, 1, 8, '… is she wearing?. She is wearing a pink dress', 30, NULL, NULL),
+(62, 1, 8, 'She … got brown hair', 30, NULL, NULL),
+(63, 1, 8, '… are Peter and Mary?. They are at the school party', 30, NULL, NULL),
+(64, 1, 8, 'I do not … TV in the morning', 30, NULL, NULL),
+(65, 1, 8, 'He works from 7.30 AM … 4.30PM', 30, NULL, NULL),
+(66, 1, 8, 'What … do you get up?. I get up at five', 30, NULL, NULL),
+(67, 1, 8, 'When is ChildrenDay?. It is on …', 30, NULL, NULL),
+(68, 1, 8, 'My mother is a …. She works in a hospital', 30, NULL, NULL),
+(69, 1, 8, 'Lets go to the … I want some medicine', 30, NULL, NULL),
+(70, 1, 9, 'There are English - Vietnamese …', 30, NULL, NULL),
+(71, 1, 9, 'My mother takes care of my house and looks … my baby sister', 30, NULL, NULL),
+(72, 1, 9, '… straight across the road', 30, NULL, NULL),
+(73, 1, 9, 'Are they students?. Yes,…', 30, NULL, NULL),
+(74, 1, 9, 'Can you speak English?. …', 30, NULL, NULL),
+(75, 1, 10, 'How old is your father?', 30, '2017-05-26 21:54:18', '2017-05-26 21:54:18'),
+(76, 1, 10, 'How old are you?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(77, 1, 10, 'What is he doing?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(78, 1, 10, 'What are they playing?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(79, 1, 10, 'What''s the weather like today?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(80, 1, 10, 'Has she got a robot?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(81, 1, 10, 'How many goldfish have you got?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(82, 1, 10, 'How many bedrooms are there in your house?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(83, 1, 10, 'Where is Mai?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(84, 1, 10, 'What is your mother doing?', 30, '2017-05-26 21:54:19', '2017-05-26 21:54:19'),
+(105, 2, 11, 'public/image/image/apple.png', NULL, '2017-05-26 22:07:34', '2017-05-26 22:07:34'),
+(106, 2, 11, 'public/image/image/avocado.png', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(107, 2, 11, 'public/image/image/banana.png', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(108, 2, 11, 'public/image/image/chanh.jpg', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(109, 2, 11, 'public/image/image/duahau.jpg', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(110, 2, 11, 'public/image/image/img_avocado.png', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(111, 2, 11, 'public/image/image/img_banana.jpg', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(112, 2, 11, 'public/image/image/leman.png', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(113, 2, 11, 'public/image/image/mango.png', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(114, 2, 11, 'public/image/image/tao.jpg', NULL, '2017-05-26 22:07:35', '2017-05-26 22:07:35'),
+(115, 5, 12, 'public/image/video/And-really-think-about-it-What-could-possibly-go-wrong.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(116, 5, 12, 'public/image/video/I-am-a-pirate-I-dont-judge.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(117, 5, 12, 'public/image/video/I-cant-because-you-see.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(118, 5, 12, 'public/image/video/If-its-about-you-guys.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(119, 5, 12, 'public/image/video/i-love-spring-the-ice-age.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(120, 5, 12, 'public/image/video/Last-time-we-met-you-beat-outsmarted-and-humiliated-me.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(121, 5, 12, 'public/image/video/Long-as-you_ve-got-an-egg-i_ve-got-a-place-to-sit.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(122, 5, 12, 'public/image/video/No-can-you-believe-that.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(123, 5, 12, 'public/image/video/why-dont-you-guy-go-help-your-sister-with-the-easter-feast.mp4', 50, '2017-05-26 22:12:06', '2017-05-26 22:12:06'),
+(124, 4, 13, 'public/image/audio/A-Day-at-School.mp3', 50, '2017-05-26 22:14:58', '2017-05-26 22:14:58'),
+(125, 4, 13, 'public/image/audio/A-Fun-Day.mp3', 50, '2017-05-26 22:14:58', '2017-05-26 22:14:58'),
+(126, 4, 13, 'public/image/audio/Answering-Machine.mp3', 50, '2017-05-26 22:14:58', '2017-05-26 22:14:58'),
+(127, 4, 13, 'public/image/audio/Apartments-for-Rent.mp3', 50, '2017-05-26 22:14:58', '2017-05-26 22:14:58'),
+(128, 4, 13, 'public/image/audio/Business-Communications.mp3', 50, '2017-05-26 22:14:58', '2017-05-26 22:14:58'),
+(129, 4, 13, 'public/image/audio/Camping-Under-the-Stars.mp3', 50, '2017-05-26 22:14:58', '2017-05-26 22:14:58'),
+(130, 4, 13, 'public/image/audio/Clothing-Styles.mp3', 50, '2017-05-26 22:14:58', '2017-05-26 22:14:58'),
+(131, 4, 13, 'public/image/audio/College-Life.mp3', 50, '2017-05-26 22:14:59', '2017-05-26 22:14:59'),
+(132, 4, 13, 'public/image/audio/Daily-Schedule.mp3', 50, '2017-05-26 22:14:59', '2017-05-26 22:14:59'),
+(133, 4, 13, 'public/image/audio/Eye-Glasses-for-You.mp3', 50, '2017-05-26 22:14:59', '2017-05-26 22:14:59');
 
 -- --------------------------------------------------------
 
@@ -169,7 +206,7 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (7, 2, 'is', 0, '2017-04-25 17:00:00', NULL),
 (8, 2, 'have', 0, '2017-04-25 17:00:00', NULL),
 (9, 3, 'have', 1, NULL, NULL),
-(10, 4, 'It\'s a pen', 0, NULL, NULL),
+(10, 4, 'It''s a pen', 0, NULL, NULL),
 (11, 5, 'what', 0, NULL, NULL),
 (12, 6, 'polite', 1, NULL, NULL),
 (13, 7, 'Keep', 0, NULL, NULL),
@@ -241,7 +278,7 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (79, 73, 'they are', 1, NULL, NULL),
 (80, 74, 'Yes, I can not', 0, NULL, NULL),
 (81, 3, 'has', 0, NULL, NULL),
-(82, 4, 'It\'s a pencil', 1, NULL, NULL),
+(82, 4, 'It''s a pencil', 1, NULL, NULL),
 (83, 5, 'is', 0, NULL, NULL),
 (84, 6, 'impolite', 0, NULL, NULL),
 (85, 7, 'idea', 0, NULL, NULL),
@@ -313,7 +350,7 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (151, 73, 'they do', 0, NULL, NULL),
 (152, 74, 'No, I can', 0, NULL, NULL),
 (153, 3, 'had', 0, NULL, NULL),
-(154, 4, 'It\'s a ruler', 0, NULL, NULL),
+(154, 4, 'It''s a ruler', 0, NULL, NULL),
 (155, 5, 'spell', 1, NULL, NULL),
 (156, 6, 'rude', 0, NULL, NULL),
 (157, 7, 'attract', 1, NULL, NULL),
@@ -385,7 +422,7 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (223, 73, 'are they', 0, NULL, NULL),
 (224, 74, 'No, I can not', 1, NULL, NULL),
 (225, 3, 'is', 0, NULL, NULL),
-(226, 4, 'It\'s a rubber', 0, NULL, NULL),
+(226, 4, 'It''s a rubber', 0, NULL, NULL),
 (227, 5, 'how', 0, NULL, NULL),
 (228, 6, 'B & C are correct', 0, NULL, NULL),
 (229, 7, 'raise', 0, NULL, NULL),
@@ -505,7 +542,11 @@ INSERT INTO `de_thi` (`MA_DE`, `TEN_DE`, `SO_CAUHOI`, `created_at`, `updated_at`
 (28, 'Đề 502', 10, '2017-04-22 17:00:00', NULL),
 (29, 'Đề 503', 10, '2017-04-22 17:00:00', NULL),
 (30, 'Đề 504', 10, '2017-04-22 17:00:00', NULL),
-(31, 'Đề 505', 10, '2017-04-22 17:00:00', NULL);
+(31, 'Đề 505', 10, '2017-04-22 17:00:00', NULL),
+(32, 'Đề 601', 10, '2017-05-23 17:57:44', '2017-05-23 17:57:44'),
+(33, 'Đề 602', 10, '2017-05-23 18:02:13', '2017-05-23 18:02:13'),
+(34, 'Đề 603', 10, '2017-05-23 18:02:51', '2017-05-23 18:02:51'),
+(35, 'Đề 604', 10, '2017-05-23 18:03:29', '2017-05-23 18:03:29');
 
 -- --------------------------------------------------------
 
@@ -568,7 +609,11 @@ CREATE TABLE `loai_cau_hoi` (
 --
 
 INSERT INTO `loai_cau_hoi` (`MA_LOAI`, `TEN_LOAI`, `created_at`, `updated_at`) VALUES
-(1, 'Câu hỏi trắc nghiệm', '2017-04-20 17:00:00', NULL);
+(1, 'Trắc Nghiệm', '2017-04-20 17:00:00', NULL),
+(2, 'Ghép Hình', '2017-05-24 17:00:00', NULL),
+(3, 'Điền khuyết', '2017-05-24 17:00:00', NULL),
+(4, 'Audio', '2017-05-24 17:00:00', NULL),
+(5, 'Video', '2017-05-24 17:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -1137,14 +1182,14 @@ INSERT INTO `quan_huyen` (`MA_QH`, `MA_TINH`, `TEN_QH`, `created_at`, `updated_a
 (3252, 294, 'Chư Pưh', NULL, NULL),
 (3253, 295, 'Buôn Ma Thuột', NULL, NULL),
 (3254, 295, 'Buôn Hồ', NULL, NULL),
-(3255, 295, 'Ea H\'leo', NULL, NULL),
+(3255, 295, 'Ea H''leo', NULL, NULL),
 (3256, 295, 'Ea Súp', NULL, NULL),
 (3257, 295, 'Buôn Đôn', NULL, NULL),
-(3258, 295, 'Cư M\'gar', NULL, NULL),
+(3258, 295, 'Cư M''gar', NULL, NULL),
 (3259, 295, 'Krông Búk', NULL, NULL),
 (3260, 295, 'Krông Năng', NULL, NULL),
 (3261, 295, 'Ea Kar', NULL, NULL),
-(3262, 295, 'M\'đrắk', NULL, NULL),
+(3262, 295, 'M''đrắk', NULL, NULL),
 (3263, 295, 'Krông Bông', NULL, NULL),
 (3264, 295, 'Krông Pắc', NULL, NULL),
 (3265, 295, 'Krông A Na', NULL, NULL),
@@ -1156,7 +1201,7 @@ INSERT INTO `quan_huyen` (`MA_QH`, `MA_TINH`, `TEN_QH`, `created_at`, `updated_a
 (3271, 296, 'Đắk Mil', NULL, NULL),
 (3272, 296, 'Krông Nô', NULL, NULL),
 (3273, 296, 'Đắk Song', NULL, NULL),
-(3274, 296, 'Đắk R\'lấp', NULL, NULL),
+(3274, 296, 'Đắk R''lấp', NULL, NULL),
 (3275, 296, 'Tuy Đức', NULL, NULL),
 (3276, 297, 'Đà Lạt', NULL, NULL),
 (3277, 297, 'Bảo Lộc', NULL, NULL),
@@ -2833,7 +2878,7 @@ ALTER TABLE `bac_hoc`
 -- AUTO_INCREMENT for table `cau_hoi`
 --
 ALTER TABLE `cau_hoi`
-  MODIFY `MA_CH` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `MA_CH` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 --
 -- AUTO_INCREMENT for table `dap_an`
 --
@@ -2843,7 +2888,7 @@ ALTER TABLE `dap_an`
 -- AUTO_INCREMENT for table `de_thi`
 --
 ALTER TABLE `de_thi`
-  MODIFY `MA_DE` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `MA_DE` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `gop_y`
 --
@@ -2858,7 +2903,7 @@ ALTER TABLE `ket_qua`
 -- AUTO_INCREMENT for table `loai_cau_hoi`
 --
 ALTER TABLE `loai_cau_hoi`
-  MODIFY `MA_LOAI` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MA_LOAI` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `loai_tin_tuc`
 --
