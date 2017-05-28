@@ -136,6 +136,15 @@ class De_Thi_Controller extends Controller
 			
 		}
 
+		$de_thi = CauHoi::where('MA_DE','=',$id)->get();
+		$stt=1;
+		foreach ($de_thi as $de_thi) {
+			CauHoi::where('MA_CH','=',$de_thi->MA_CH)
+			->update([
+				'STT_CH'=>$stt
+				]);
+			$stt++;
+		}
 		return redirect()->route('chi_tiet_de_thi',[$id])->with(['flash_message'=>'Thêm câu hỏi cho đề thi thành công.']);
 	}
 
@@ -240,6 +249,16 @@ class De_Thi_Controller extends Controller
 				]);
 			}
 		}
+
+		$de_thi = CauHoi::where('MA_DE','=',$cau_hoi->MA_DE)->get();
+		$stt=1;
+		foreach ($de_thi as $de_thi) {
+			CauHoi::where('MA_CH','=',$de_thi->MA_CH)
+			->update([
+				'STT_CH'=>$stt
+				]);
+			$stt++;
+		}
 		return redirect()->route('chi_tiet_de_thi',[$cau_hoi->MA_DE])->with(['flash_message'=>'Cập Nhật câu hỏi thành công.']);
 	}
 
@@ -252,6 +271,16 @@ class De_Thi_Controller extends Controller
 			File::delete($cau_hoi->NOI_DUNG);
 
 		CauHoi::where('MA_CH','=',$id)->delete();
+
+		$de_thi = CauHoi::where('MA_DE','=',$cau_hoi->MA_DE)->get();
+		$stt=1;
+		foreach ($de_thi as $de_thi) {
+			CauHoi::where('MA_CH','=',$de_thi->MA_CH)
+			->update([
+				'STT_CH'=>$stt
+				]);
+			$stt++;
+		}
 
 		return redirect()->back()->with(['flash_message'=>'Xóa câu hỏi thành công.']);
 	}
