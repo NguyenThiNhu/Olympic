@@ -144,22 +144,15 @@
 </style>
 <script>
 
-
-
-
 	function dichuyen(e) {
-		
-		if (document.getElementById('backgroud_dabanh' == null)){
-			console.log(document.getElementById('backgroud_dabanh'));
+		if (document.getElementById('backgroud_dabanh') == null)
 			dichuyen_bancung(e);
-		} 
-			
 		else
 			dichuyen_dabanh(e);
 	}
 
 	function dichuyensai(e) {
-		if (document.getElementById('backgroud_dabanh' == null)) 
+		if (document.getElementById('backgroud_dabanh') == null)
 			dichuyensai_bancung(e);
 		else
 			dichuyensai_dabanh(e);
@@ -229,7 +222,7 @@
 	 a.style.left = '300px';
 	  a.style.top = '350' + 'px'; 
 	   console.log(a.style + "555555s");
-	  var id = setInterval(frame, 5);
+	  var id = setInterval(frame, 4);
 	  function frame() {
 	    if (pos == 240) {
 	      clearInterval(id);
@@ -242,7 +235,7 @@
 	    } else {
 	      pos++;
 	      current_top = current_top-1;
-	       console.log(current_top);
+	       //console.log(current_top);
 	      //a.style.top = posx + 'px'; 
 	      a.style.top = current_top + 'px'; 
 	      if (pos%50) {
@@ -273,7 +266,7 @@
 	 a.style.left = '300px';
 	  a.style.top = '350' + 'px'; 
 	   console.log(a.style + "555555s");
-	  var id = setInterval(frame, 5);
+	  var id = setInterval(frame, 3);
 	  function frame() {
 	    if (pos == 140) {
 	      clearInterval(id);
@@ -282,7 +275,7 @@
 	      var id2 = setInterval(frame2, 1);
 	      pos = 0;
 	      posy = Number(a.style.left.split('p')[0]);
-	      console.log(posy);
+	      //console.log(posy);
 	      function frame2() {
 	      	  if (pos == 190) {
 	      	  		  console.log('ss')
@@ -299,7 +292,7 @@
 				      
 				      //a.style.top = posx + 'px'; 
 				     a.style.left = posy++ + 'px'; 
-				     console.log(posy);
+				     //console.log(posy);
 
 				     if (pos%7 == 0) {
 				     	var pos_temp = Number(a.style.top.split('p')[0]) - 1
@@ -332,6 +325,16 @@
 	function setCorrectAnswer(e){
 		var answer = document.getElementById('dap_an1');
 		answer.style.backgroundColor = '#58FA58';
+		//document.cookie = Number(document.cookie)++ total_correct_answer++;
+		if(getCookie('total_correct_answer') == null){
+			setCookie('total_correct_answer','0',2)
+		}
+		var current_correct = Number(getCookie('total_correct_answer'));
+		current_correct++;
+		setCookie('total_correct_answer', current_correct, 2);
+
+		console.log('------------------'+getCookie('total_correct_answer'))
+		//console.log(document.cookie);
 	}
 	function setIncorrectAnswer(e){
 		console.log(e)
@@ -339,7 +342,28 @@
 		setCorrectAnswer(e);
 	}
 
-	
+	function setCookie(cname, cvalue, exdays) {
+		    var d = new Date();
+		    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		    var expires = "expires="+d.toUTCString();
+		    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+		    var name = cname + "=";
+		    var ca = document.cookie.split(';');
+		    for(var i = 0; i < ca.length; i++) {
+		        var c = ca[i];
+		        while (c.charAt(0) == ' ') {
+		            c = c.substring(1);
+		        }
+		        if (c.indexOf(name) == 0) {
+		            return c.substring(name.length, c.length);
+		        }
+		    }
+		    return "";
+	}
+
 
 
 </script>
@@ -409,9 +433,22 @@
 	</div>
 @elseif ($cauhoi->MA_LOAI ==4)
     <div class="container">
-	
+    <textarea class="form-control" rows="5" id="comment"></textarea>
 	<div id="tu-luan">
-	
+	<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
+		{!!$cauhoi->NOI_DUNG!!}
+		</div>
+		<br>
+
+</div>
+@elseif ($cauhoi->MA_LOAI ==5)
+    <div class="container">
+    <textarea class="form-control" rows="5" id="comment"></textarea>
+	<div id="tu-luan">
+	<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
+		{!!$cauhoi->NOI_DUNG!!}
+		</div>
+		<br>
 
 </div>
 @endif
