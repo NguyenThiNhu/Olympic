@@ -380,7 +380,7 @@
 		<?php $stt = $stt+1;?>
 		
 		<div id="dapan">
-					<!--<div class="col-sm-12 col-md-offset-2">-->
+				
 				<?php $dapan = App\DapAn::where('MA_CH','=',$cauhoi->MA_CH)->get(); ?>
 				@foreach( $dapan as $dapan)
 					<div class="col-sm-6">
