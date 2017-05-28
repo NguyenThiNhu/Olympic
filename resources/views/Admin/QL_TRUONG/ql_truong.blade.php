@@ -7,9 +7,21 @@
 
 <div class="panel-heading" style="color:white;text-align:center;background-color:#176cb0; font-size: 34px;">Quản Lý Trường</div>
 <div class="templatemo-content-container col-sm-12">
-			<h3 style="color: black;">Danh sách trường</h3>
-      <a href="{{url('them-truong')}}" class="btn btn-info" >Thêm trường</a>
-      <br>
+
+    <br>
+      @if(Session::has('flash_message'))
+      <div class="alert alert-success col-sm-12">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+              ×</button>
+         <span class="glyphicon glyphicon-ok"></span> <strong>Thông Báo</strong>
+          <hr class="message-inner-separator">
+          <p style="color: black;">{!! Session::get('flash_message') !!}</p>
+      </div>
+      @endif
+      <div>
+        <h3 style="color: black;">Danh sách trường</h3>
+        <a href="{{url('them-truong')}}" class="btn btn-info" >Thêm trường</a>  
+      </div>    
       <br>
 		<div class="templatemo-content-widget no-padding">
             <div class="panel panel-default table-responsive">
@@ -49,7 +61,7 @@
                     <td>{!!$item->TEN_QH!!}</td>
                     <td>{!!$item->TEN_BAC!!}</td>
                     <td>{!!$item->TEN_TRUONG!!}</td>
-                    <td class="text-align" style="text-align: center;"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Sửa</a></td>
+                    <td class="text-align" style="text-align: center;"><a class='btn btn-info btn-xs' href="{!!url('cap-nhat-truong',[$item->MA_TRUONG])!!}"><span class="glyphicon glyphicon-edit"></span> Sửa</a></td>
                     <td class="text-align" style="text-align: center;"> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Xóa</a></td>
                   </tr>
                         @endforeach          

@@ -60,6 +60,10 @@ Route:: get('ql-loaicauhoi',['as'=>'QL_Loaicauhoi', 'uses'=>'Admin\Cau_Hoi_Contr
 Route:: get('truong',['as'=>'Truong', 'uses'=>'Admin\Truong_Controller@lay_truong']);
 Route::get('them-truong',['as'=>'themtruong','uses'=>'Admin\Truong_Controller@trang_them_truong']);
 Route::post('them-truong',['as'=>'themtruong','uses'=>'Admin\Truong_Controller@them_truong']);
+ 
+ Route::get('cap-nhat-truong/{id}',['as'=>'cap_nhat_truong','uses'=>'Admin\Truong_Controller@cap_nhat_truong']);
+Route::post('cap-nhat-truong/{id}',['as'=>'cap_nhat_truong', 'uses'=>'Admin\Truong_Controller@post_cap_nhat_truong']);
+
 
 Route:: get('de-thi',['as'=>'ql_de_thi', 'uses'=>'Admin\De_Thi_Controller@lay_de_thi']);
 
@@ -78,3 +82,13 @@ Route::get('cap-nhat-cau-hoi/{id}',['as'=>'cap_nhat_cau_hoi', 'uses'=>'Admin\De_
 Route::post('cap-nhat-cau-hoi/{id}',['as'=>'post_cap_nhat_cau_hoi', 'uses'=>'Admin\De_Thi_Controller@post_cap_nhat']);
 //end_cap_nhat
 Route::get('xoa-cau-hoi/{id}',['as'=>'xoa_cau_hoi', 'uses'=>'Admin\De_Thi_Controller@xoa_cau_hoi']);
+
+//Them Dap An
+Route::get('them-dap-an/{id}',['as'=>'them_dap_an', 'uses'=>'Admin\De_Thi_Controller@them_dap_an']);
+
+Route::post('them-dap-an/{id}',['as'=>'post_them_dap_an', 'uses'=>'Admin\De_Thi_Controller@post_them_dap_an']);
+//end them dap an
+
+
+//Xem Gop Y
+Route::get('xem-gop-y',['as'=>'xem_gop_y','uses'=>'Admin\GOP_Y_controller@show']);

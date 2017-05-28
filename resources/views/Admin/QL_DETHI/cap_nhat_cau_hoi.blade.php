@@ -25,165 +25,256 @@
 							</select>
 						</div>
 						@if($cau_hoi->MA_LOAI==1)
-							<div class="form-group" id="loai1">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="trac_nghiem" rows="2" class="form-control">{!!$cau_hoi->NOI_DUNG!!}</textarea>
-							</div>
-							<div class="form-group" id="loai2" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<img src="" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
-								<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
-							</div>
-							<div class="form-group" id="loai3" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="dien_khuyet" rows="2" class="form-control"></textarea>
-							</div>
-							<div class="form-group" id="loai4" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<audio controls id="audio_ht" style="width: 100%;">
-			                        	<source src="" type="audio/mp3" >
-			                      	</audio>
-									<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+							<div id="loai1">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="trac_nghiem" rows="2" class="form-control">{!!$cau_hoi->NOI_DUNG!!}</textarea>
 								</div>
 							</div>
-							<div class="form-group" id="loai5" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<video controls id="vido_ht" style="width: 100%;">
-	                                	<source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="video/mp4">
-	                              	</video>
-									<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+							<div id="loai2" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<img src="" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
+									<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
+								</div>
+							</div>
+							<div id="loai3" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="dien_khuyet" rows="2" class="form-control"></textarea>
+								</div>
+							</div>
+							<div id="loai4" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_audio" rows="2" class="form-control"></textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<audio controls id="audio_ht" style="width: 100%;">
+				                        	<source src="" type="audio/mp3" >
+				                      	</audio>
+										<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+									</div>
+								</div>
+							</div>
+							<div id="loai5" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_video" rows="2" class="form-control"></textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<video controls id="video_ht" style="width: 100%;">
+		                                	<source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="video/mp4">
+		                              	</video>
+										<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+									</div>
 								</div>
 							</div>
 						@elseif($cau_hoi->MA_LOAI==2)
-							<div class="form-group" id="loai2">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<img src="{!!asset($cau_hoi->NOI_DUNG)!!}" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
-								<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
-							</div>
-							<div class="form-group" id="loai1" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="trac_nghiem" rows="2" class="form-control"></textarea>
-							</div>
-							<div class="form-group" id="loai3" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="dien_khuyet" rows="2" class="form-control"></textarea>
-							</div>
-							<div class="form-group" id="loai4" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<audio controls id="audio_ht" style="width: 100%;">
-			                        	<source src="" type="audio/mp3" >
-			                      	</audio>
-									<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+							<div id="loai2">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<img src="{!!asset($cau_hoi->NOI_DUNG)!!}" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
+									<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
 								</div>
 							</div>
-							<div class="form-group" id="loai5" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<video controls id="vido_ht" style="width: 100%;">
-	                                	<source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="video/mp4">
-	                              	</video>
-									<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+							<div id="loai1" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="trac_nghiem" rows="2" class="form-control"></textarea>
+								</div>
+							</div>
+							<div id="loai3" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="dien_khuyet" rows="2" class="form-control"></textarea>
+								</div>
+							</div>
+							<div id="loai4" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_audio" rows="2" class="form-control"></textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<audio controls id="audio_ht" style="width: 100%;">
+				                        	<source src="" type="audio/mp3" >
+				                      	</audio>
+										<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+									</div>
+								</div>
+							</div>
+							<div id="loai5" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_video" rows="2" class="form-control"></textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<video controls id="video_ht" style="width: 100%;">
+		                                	<source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="video/mp4">
+		                              	</video>
+										<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+									</div>
 								</div>
 							</div>
 						@elseif($cau_hoi->MA_LOAI==3)
-							<div class="form-group" id="loai3">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="dien_khuyet" rows="2" class="form-control">{!!$cau_hoi->NOI_DUNG!!}</textarea>
-							</div>
-							<div class="form-group" id="loai1" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="trac_nghiem" rows="2" class="form-control"></textarea>
-							</div>
-							<div class="form-group" id="loai2" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<img src="" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
-								<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
-							</div>
-							<div class="form-group" id="loai4" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<audio controls id="audio_ht" style="width: 100%;">
-			                        	<source src="" type="audio/mp3" >
-			                      	</audio>
-									<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+							<div id="loai3">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="dien_khuyet" rows="2" class="form-control">{!!$cau_hoi->NOI_DUNG!!}</textarea>
 								</div>
 							</div>
-							<div class="form-group" id="loai5" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<video controls id="vido_ht" style="width: 100%;">
-	                                	<source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="video/mp4">
-	                              	</video>
-									<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+							<div id="loai1" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="trac_nghiem" rows="2" class="form-control"></textarea>
+								</div>
+							</div>
+							<div id="loai2" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<img src="" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
+									<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
+								</div>
+							</div>
+							<div id="loai4" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_audio" rows="2" class="form-control"></textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<audio controls id="audio_ht" style="width: 100%;">
+				                        	<source src="" type="audio/mp3" >
+				                      	</audio>
+										<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+									</div>
+								</div>
+							</div>
+							<div id="loai5" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_video" rows="2" class="form-control"></textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<video controls id="video_ht" style="width: 100%;">
+		                                	<source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="video/mp4">
+		                              	</video>
+										<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+									</div>
 								</div>
 							</div>
 						@elseif($cau_hoi->MA_LOAI==4)
-							<div class="form-group" id="loai4">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<audio controls id="audio_ht" style="width: 100%;">
-			                        	<source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="audio/mp3" >
-			                      	</audio>
-									<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+							<div id="loai4">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_audio" rows="2" class="form-control">{!!$cau_hoi->NOI_DUNG!!}</textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<audio controls id="audio_ht" style="width: 100%;">
+				                        	<source src="{!!asset($cau_hoi->AUDIO_VIDEO)!!}" type="audio/mp3" >
+				                      	</audio>
+										<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+									</div>
 								</div>
 							</div>
-							<div class="form-group" id="loai1" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="trac_nghiem" rows="2" class="form-control"></textarea>
+							<div id="loai1" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="trac_nghiem" rows="2" class="form-control"></textarea>
+								</div>
+							</div>	
+							<div id="loai2" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<img src="" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
+									<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
+								</div>
 							</div>
-							<div class="form-group" id="loai2" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<img src="" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
-								<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
+							<div id="loai3" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="dien_khuyet" rows="2" class="form-control"></textarea>
+								</div>
 							</div>
-							<div class="form-group" id="loai3" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="dien_khuyet" rows="2" class="form-control"></textarea>
-							</div>
-							<div class="form-group" id="loai5" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<video controls id="vido_ht" style="width: 100%;">
-	                                	<source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="video/mp4">
-	                              	</video>
-									<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+							<div id="loai5" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_video" rows="2" class="form-control"></textarea>
+								</div>
+								<div class="form-group" >
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<video controls id="video_ht" style="width: 100%;">
+		                                	<source src="" type="video/mp4">
+		                              	</video>
+										<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+									</div>
 								</div>
 							</div>
 						@elseif($cau_hoi->MA_LOAI==5)
-							<div class="form-group" id="loai5">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<video controls id="vido_ht" style="width: 100%;">
-	                                <source src="{!!asset($cau_hoi->NOI_DUNG)!!}" type="video/mp4">
-	                              </video>
-									<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+							<div id="loai5">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_video" rows="2" class="form-control">{!!$cau_hoi->NOI_DUNG!!}</textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<video controls id="video_ht" style="width: 100%;">
+		                                <source src="{!!asset($cau_hoi->AUDIO_VIDEO)!!}" type="video/mp4">
+		                              </video>
+										<input type="file" class="form-control" name="video" onchange="readURL2(this);">	
+									</div>
 								</div>
 							</div>
-							<div class="form-group" id="loai1" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="trac_nghiem" rows="2" class="form-control"></textarea>
-							</div>
-							<div class="form-group" id="loai2" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<img src="" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
-								<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
-							</div>
-							<div class="form-group" id="loai3" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<textarea name="dien_khuyet" rows="2" class="form-control"></textarea>
-							</div>
-							<div class="form-group" id="loai4" style="display: none;">
-								<label style="color: black;"> Nội Dung Câu Hỏi:</label>
-								<div>
-									<audio controls id="audio_ht" style="width: 100%;">
-			                        	<source src="" type="audio/mp3" >
-			                      	</audio>
-									<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+							<div id="loai1" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="trac_nghiem" rows="2" class="form-control"></textarea>
 								</div>
 							</div>
+							<div id="loai2" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<img src="" style="width: 100%;height: auto;" class="form-control" id="hinh_hien_tai">
+									<input type="file" class="form-control" name="hinh" onchange="readURL(this);">
+								</div>
+							</div>
+							<div id="loai3" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="dien_khuyet" rows="2" class="form-control"></textarea>
+								</div>
+							</div>
+							<div id="loai4" style="display: none;">
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi:</label>
+									<textarea name="nd_audio" rows="2" class="form-control"></textarea>
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Audio/Video:</label>
+									<div>
+										<audio controls id="audio_ht" style="width: 100%;">
+				                        	<source src="" type="audio/mp3" >
+				                      	</audio>
+										<input type="file" class="form-control" name="audio" onchange="readURL1(this);">	
+									</div>
+								</div>
+							</div>
+							
 						@endif
 						<div class="form-group">
 							<label style="color: black;"> Thời Gian Câu Hỏi (Giây):</label>
@@ -231,9 +322,9 @@
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                $('#vido_ht')
+                $('#video_ht')
                     .attr('src', e.target.result);
-                     $('#vido_ht').load();
+                     $('#video_ht').load();
             };
             reader.readAsDataURL(input.files[0]);
            

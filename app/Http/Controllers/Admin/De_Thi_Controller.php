@@ -8,7 +8,7 @@ use App\DeThi;
 use App\CauHoi;
 use App\DapAn;
 use DB,Validator,Datetime,File;
-use Intervention\Image\Facades\Image;
+
 
 
 class De_Thi_Controller extends Controller
@@ -61,6 +61,7 @@ class De_Thi_Controller extends Controller
 				$cau_hoi->MA_LOAI = $req->loai_ch;
 				$cau_hoi->MA_DE = $id;
 				$cau_hoi->NOI_DUNG = $destinationPath.$filename;
+				$cau_hoi->TG_CAUHOI = 300;
 				$cau_hoi->save();
 		    }
 		}elseif ($req->loai_ch==3) {
@@ -84,36 +85,53 @@ class De_Thi_Controller extends Controller
 			
 		}elseif ($req->loai_ch==4) {
 			$files = $req->file('audio');
-			foreach($files as $file){
-				//lay audio len
-		        $filename = $file->getClientOriginalName();
-		        $extension = $file->getClientOriginalExtension();
-		        $destinationPath = 'public/image/audio/';
-		        $file->move($destinationPath, $filename);
-		        //end lay audio
-		        $cau_hoi = new CauHoi;
-				$cau_hoi->MA_LOAI = $req->loai_ch;
-				$cau_hoi->MA_DE = $id;
-				$cau_hoi->NOI_DUNG = $destinationPath.$filename;
-				$cau_hoi->TG_CAUHOI = 50;
-				$cau_hoi->save();
+			foreach($files as $key =>$value){
+				foreach ($req->ch_audio as $key1 => $value1) {
+					if($value!=null && $value1!=null){
+						if($key == $key1)
+						{
+							//lay audio len
+					        $filename = $value->getClientOriginalName();
+					        $extension = $value->getClientOriginalExtension();
+					        $destinationPath = 'public/image/audio/';
+					        $value->move($destinationPath, $filename);
+					        //end lay audio
+					        $cau_hoi = new CauHoi;
+							$cau_hoi->MA_LOAI = $req->loai_ch;
+							$cau_hoi->MA_DE = $id;
+							$cau_hoi->NOI_DUNG = $value1; 
+							$cau_hoi->AUDIO_VIDEO = $destinationPath.$filename;
+							$cau_hoi->TG_CAUHOI = 50;
+							$cau_hoi->save();
+						}
+					}
+					
+				}
 		    }
 			
 		}elseif ($req->loai_ch==5) {
 			$files = $req->file('video');
-			foreach($files as $file){
-				//lay video len
-		        $filename = $file->getClientOriginalName();
-		        $extension = $file->getClientOriginalExtension();
-		        $destinationPath = 'public/image/video/';
-		        $file->move($destinationPath, $filename);
-		        //end lay video
-		        $cau_hoi = new CauHoi;
-				$cau_hoi->MA_LOAI = $req->loai_ch;
-				$cau_hoi->MA_DE = $id;
-				$cau_hoi->NOI_DUNG = $destinationPath.$filename;
-				$cau_hoi->TG_CAUHOI = 50;
-				$cau_hoi->save();
+			foreach($files as $key =>$value){
+				foreach ($req->ch_video as $key1 => $value1) {
+					if($value!=null && $value1!=null){
+						if($key == $key1)
+						{
+							//lay audio len
+					        $filename = $value->getClientOriginalName();
+					        $extension = $value->getClientOriginalExtension();
+					        $destinationPath = 'public/image/video/';
+					        $value->move($destinationPath, $filename);
+					        //end lay audio
+					        $cau_hoi = new CauHoi;
+							$cau_hoi->MA_LOAI = $req->loai_ch;
+							$cau_hoi->MA_DE = $id;
+							$cau_hoi->NOI_DUNG = $value1; 
+							$cau_hoi->AUDIO_VIDEO = $destinationPath.$filename;
+							$cau_hoi->TG_CAUHOI = 50;
+							$cau_hoi->save();
+						}
+					}
+				}
 		    }
 			
 		}
@@ -149,6 +167,7 @@ class De_Thi_Controller extends Controller
 				]);
 			}
 			else{
+				
 				File::delete($cau_hoi->NOI_DUNG);
 				$filename = $files->getClientOriginalName();
 		        $extension = $files->getClientOriginalExtension();
@@ -176,6 +195,7 @@ class De_Thi_Controller extends Controller
 			{
 				CauHoi::where('MA_CH','=',$id)
 				->update([
+					'NOI_DUNG'=>$req->nd_audio,
 					'TG_CAUHOI'=>$req->tg_cauhoi
 				]);
 			}
@@ -188,7 +208,8 @@ class De_Thi_Controller extends Controller
 				CauHoi::where('MA_CH','=',$id)
 				->update([
 					'MA_LOAI'=>$req->loai_ch,
-					'NOI_DUNG'=>$destinationPath.$filename,
+					'NOI_DUNG'=>$req->nd_audio,
+					'AUDIO_VIDEO'=>$destinationPath.$filename,
 					'TG_CAUHOI'=>$req->tg_cauhoi
 				]);
 			}
@@ -199,6 +220,7 @@ class De_Thi_Controller extends Controller
 			{
 				CauHoi::where('MA_CH','=',$id)
 				->update([
+					'NOI_DUNG'=>$req->nd_video,
 					'TG_CAUHOI'=>$req->tg_cauhoi
 				]);
 			}
@@ -212,7 +234,8 @@ class De_Thi_Controller extends Controller
 				CauHoi::where('MA_CH','=',$id)
 				->update([
 					'MA_LOAI'=>$req->loai_ch,
-					'NOI_DUNG'=>$destinationPath.$filename,
+					'NOI_DUNG'=>$req->nd_video,
+					'AUDIO_VIDEO'=>$destinationPath.$filename,
 					'TG_CAUHOI'=>$req->tg_cauhoi
 				]);
 			}
@@ -224,6 +247,7 @@ class De_Thi_Controller extends Controller
 
 	public function xoa_cau_hoi($id){
 		$cau_hoi = CauHoi::where('MA_CH','=',$id)->first();
+		DapAn::where('MA_CH','=',$id)->delete();
 		if($cau_hoi->MA_LOAI==2||$cau_hoi->MA_LOAI==4||$cau_hoi->MA_LOAI==5)
 			File::delete($cau_hoi->NOI_DUNG);
 
@@ -252,6 +276,39 @@ class De_Thi_Controller extends Controller
 		$de_thi->SO_CAUHOI = $req->so_cau;
 		$de_thi->save();
 		return redirect()->route('ql_de_thi')->with(['flash_message'=>'Thêm Đề Thi Thành Công.!!']);
+	}
+
+	public function them_dap_an($id){
+		$cau_hoi = CauHoi::where('MA_CH','=',$id)->first();
+		return view('Admin.QL_DETHI.them_dap_an',compact('cau_hoi'));
+	}
+
+	public function post_them_dap_an($id, Request $req){
+		$cau_hoi = CauHoi::where('MA_CH','=',$id)->first();
+		
+		if($cau_hoi->MA_LOAI==2)
+		{
+			$files = $req->file('hinh_anh');
+			$filename = $files->getClientOriginalName();
+	        $extension = $files->getClientOriginalExtension();
+	        $destinationPath = 'public/image/Dap_An/';
+	        $files->move($destinationPath, $filename);
+
+	        $add_da = new DapAn;
+	        $add_da->MA_CH = $id;
+	        $add_da->NOI_DUNG= $destinationPath.$filename;
+	        $add_da->TRANGTHAI = $req->trang_thai;
+	        $add_da->save();
+		}
+		else{
+			$add_da = new DapAn;
+			$add_da->MA_CH = $id;
+			$add_da->NOI_DUNG = $req->noi_dung;
+			$add_da->TRANGTHAI = $req->trang_thai;
+			$add_da->save();
+		}
+		return redirect()->route('xem_dap_an',[$id])->with(['flash_message'=>'Thêm đáp án thành công.!']);
+
 	}
 
 }

@@ -10,6 +10,7 @@ class DapAn extends Model
     protected $fillable=[
     	'MA_CH',
     	'NOI_DUNG',
-    	'TRANG_THAI'
+    	'AUDIO_VIDEO',
+    	'TRANGTHAI'
     ];
 }

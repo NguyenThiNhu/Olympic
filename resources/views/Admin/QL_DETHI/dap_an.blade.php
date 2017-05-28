@@ -5,7 +5,7 @@
 @stop
 @section('content')
 
-<div class="panel-heading" style="color:white;text-align:center;background-color:#176cb0; font-size: 34px;">Quản Lý Đề Thi</div>
+<div class="panel-heading" style="color:white;text-align:center;background-color:#176cb0; font-size: 34px;">Quản Lý Câu Hỏi</div>
 <div class="templatemo-content-container col-sm-12">
     @if(Session::has('flash_message'))
     <div class="alert alert-success col-sm-12">
@@ -16,10 +16,14 @@
         <p style="color: black;">{!! Session::get('flash_message') !!}</p>
     </div>
     @endif
-       <h1 style="color: black; text-align: center;">Đáp án câu hỏi {!!$cau_hoi->NOI_DUNG!!}</h1>
+      @if($cau_hoi->MA_LOAI==2)
+       <h1 style="color: black; text-align: center;">Đáp án câu hỏi hình <img src="{!!asset($cau_hoi->NOI_DUNG)!!}" style="width: 100px;height: 80px;"></h1>
+      @else
+      <h1 style="color: black; text-align: center;">Đáp án câu hỏi {!!$cau_hoi->NOI_DUNG!!}</h1>
+      @endif
       <div class="form-input clearfix">
           <div class="label"></div>
-          <div class="value"><a href="" class="btn btn-info">Thêm Đáp Án</a></div>
+          <div class="value"><a href="{{url('them-dap-an',[$cau_hoi->MA_CH])}}" class="btn btn-info">Thêm Đáp Án</a></div>
           <br>
       </div>           
 		<div class="templatemo-content-widget no-padding">
@@ -49,7 +53,13 @@
              @foreach($dap_an as $dap_an)
 			         <tr>
                     <td style="text-align: center;">{!!$stt!!}</td>
+                    <?php $loai = App\CauHoi::where('MA_CH','=',$dap_an->MA_CH)->first();?>
+                    @if($loai->MA_LOAI==2)
+                    <td style="text-align: center;"><img src="{!!asset($dap_an->NOI_DUNG)!!}" style="width: 60px; height: 40px;"></td>
+                    @else
                     <td style="text-align: center;">{!!$dap_an->NOI_DUNG!!}</td>
+                    @endif
+                    
                     @if($dap_an->TRANGTHAI==1)
                       <td style="text-align: center;">Đúng</td>
                     @else

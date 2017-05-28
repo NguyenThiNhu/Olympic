@@ -93,7 +93,7 @@
 			<li ><a href="{{url('ql-cauhoi')}}"><i class="glyphicon glyphicon-pencil"></i> Quản Lý Câu Hỏi</a></li>
 			<li ><a href=""><i class="glyphicon glyphicon-user"></i> Quản Lý Người Dùng</a></li>
 			<li ><a href=""><i class="glyphicon glyphicon-signal"></i> Thống Kê</a></li>
-			<li><a href=""><i class="glyphicon glyphicon-comment"></i> Xem Góp Ý</a></li>
+			<li><a href="{{url('xem-gop-y')}}"><i class="glyphicon glyphicon-comment"></i> Xem Góp Ý</a></li>
 						
 		</ul>
 		

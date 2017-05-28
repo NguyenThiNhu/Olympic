@@ -59,8 +59,12 @@
 						<div id="loai4" style="display: none;">
 							@for ($i = 1; $i <= $de_thi->SO_CAUHOI; $i++)
 								<div class="form-group">
-									<label style="color: black;"> Audio Thứ {!!$i!!}:</label>
+									<label style="color: black;">Câu Hỏi Audio Thứ {!!$i!!}:</label>
 									<input type="file" class="form-control" name="audio[]">
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi Thứ {!!$i!!}:</label>
+									<textarea name="ch_audio[]" rows="2" class="form-control" placeholder="Nội dung câu hỏi..."></textarea>
 								</div>
 								<br>
 							@endfor
@@ -68,15 +72,19 @@
 						<div id="loai5" style="display: none;">
 							@for ($i = 1; $i <= $de_thi->SO_CAUHOI; $i++)
 								<div class="form-group">
-									<label style="color: black;"> Video Thứ {!!$i!!}:</label>
+									<label style="color: black;">Câu Hỏi Video Thứ {!!$i!!}:</label>
 									<input type="file" class="form-control" name="video[]">
+								</div>
+								<div class="form-group">
+									<label style="color: black;"> Nội Dung Câu Hỏi Thứ {!!$i!!}:</label>
+									<textarea name="ch_video[]" rows="2" class="form-control" placeholder="Nội dung câu hỏi..."></textarea>
 								</div>
 								<br>
 							@endfor
 						</div>
 						<div class="form-group">
-							<button type="submit" class="btn btn-primary" style="background-color:green;">Thêm</button>
-							<a onclick="window.history.back()" class="btn btn-default" style="background-color:red; color: white">Quay Lại</a> 
+							<button type="submit" class="btn btn-info">Thêm</button>
+							<a onclick="window.history.back()" class="btn btn-danger">Quay Lại</a> 
 						</div>
 					</form>
 				</div>
