@@ -29,7 +29,7 @@ Route:: get('dang-nhap',['as'=>'Dang_nhap', 'uses'=>'User\Dang_Nhap_Controller@s
 Route:: post('dang-nhap',['as'=>'post_Dang_nhap', 'uses'=>'User\Dang_Nhap_Controller@DangNhap']);
 /*Thi*/
 Route:: get('vao-thi',['as'=>'Vao_thi', 'uses'=>'Admin\De_Thi_Controller@vao_thi']);
-Route:: get('bai-thi/{stt}',['as'=>'Bai_thi', 'uses'=>'Admin\Cau_Hoi_Controller@lay_cau_hoi_bai_thi']);
+Route:: get('bai-thi/{ma_de}/{stt}',['as'=>'Bai_thi', 'uses'=>'Admin\Cau_Hoi_Controller@lay_cau_hoi_bai_thi']);
 Route:: get('ket-qua-thi',['as'=>'Ket_qua_thi', 'uses'=>'Admin\Cau_Hoi_Controller@ket_qua_thi']);
 
 

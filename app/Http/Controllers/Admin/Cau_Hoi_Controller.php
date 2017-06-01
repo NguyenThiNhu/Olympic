@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use App\DeThi;
 
 class Cau_Hoi_Controller extends Controller
 {
@@ -24,7 +25,7 @@ class Cau_Hoi_Controller extends Controller
 
 
 
-    public function lay_cau_hoi_bai_thi($stt){
+    public function lay_cau_hoi_bai_thi($ma_de,$stt){
         if($stt<=10)
         {
         $cauhoi = DB::table('cau_hoi')
@@ -32,9 +33,15 @@ class Cau_Hoi_Controller extends Controller
             ->join('de_thi', 'cau_hoi.MA_DE', '=', 'de_thi.MA_DE')
             ->select('cau_hoi.*', 'loai_cau_hoi.*', 'de_thi.*')
             ->where('cau_hoi.STT_CH','=',$stt)
+            ->where('cau_hoi.MA_DE','=',$ma_de)
             ->first();
+
             $stt=$stt;
-        return view('User.baithi',compact('cauhoi','stt'));
+        if ($cauhoi == null) {
+            $dethi = DeThi::all();
+            return view('User.vaothi',compact('dethi'));
+        }
+        return view('User.baithi',compact('cauhoi','stt','ma_de'));
         }
         else
             {
