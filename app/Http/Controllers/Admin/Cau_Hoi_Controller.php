@@ -11,7 +11,7 @@ use App\CauHoi;
 use App\KET_QUA;
 use App\User;
 use Expression;
-use DB;
+
 
 
 class Cau_Hoi_Controller extends Controller
