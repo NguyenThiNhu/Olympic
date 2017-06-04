@@ -48,6 +48,7 @@ Route::get('hoan-thanh-bai-thi',['as'=>'hoan_thanh', 'uses'=>'Admin\Cau_Hoi_Cont
 
 Route::get('ket-thuc-bai-thi',['as'=>'ket_thuc_bai_thi', 'uses'=>'Admin\Cau_Hoi_Controller@ket_thuc']);
 
+
 Route:: get('ket-qua-thi',['as'=>'Ket_qua_thi', 'uses'=>'Admin\Cau_Hoi_Controller@ket_qua_thi']);
 
 

@@ -1,4 +1,4 @@
-﻿
+
 @extends('User.master')
 @section('title', 'Bài Thi')
 @section('Carousel')
@@ -356,12 +356,19 @@ function dichuyen(e) {
 
 //     }, $cauhoi->)
 // });;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 45e6ec9e52b0f2500d7691782e15c5869961475c
 </script>
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 45e6ec9e52b0f2500d7691782e15c5869961475c
 <!-- TL Dúng -->
 
 @if ($cauhoi->MA_LOAI ==1)
@@ -426,6 +433,7 @@ function dichuyen(e) {
 	</div>
 @elseif ($cauhoi->MA_LOAI ==4)
     <div class="container">
+<<<<<<< HEAD
 	    <br>
 	    <div class=" col-sm-12">
 	    	<audio controls class="col-sm-12" style="max-width: 100% display: inline-block;">
@@ -452,12 +460,43 @@ function dichuyen(e) {
 				</div>
 			@endforeach
 		</div>
+=======
+    <br>
+    <div class=" col-sm-12">
+    	<audio controls class="col-sm-12" style="max-width: 100% display: inline-block;">
+          <source src="{!!asset($cauhoi->AUDIO_VIDEO)!!}" type="audio/mp3">
+        </audio>
+    </div>
+    <br>
+	     
+	<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
+		{!!$cauhoi->NOI_DUNG!!}
+		</div>
+		<br>
+
+	<?php $stt = $stt+1;?>
+		
+		<div id="dapan">
+				
+				<?php $dapan = App\DapAn::where('MA_CH','=',$cauhoi->MA_CH)->get(); ?>
+				@foreach( $dapan as $dapan)
+					<div class="col-sm-6">
+						@if($dapan->TRANGTHAI==1)
+						<button  data-toggle="modal" data-target="#myModal" onclick="setCorrectAnswer(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+						@else
+						<button data-toggle="modal" data-target="#myModalSai" onclick="setIncorrectAnswer(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+						@endif
+					</div>
+				@endforeach
+	</div>
+>>>>>>> 45e6ec9e52b0f2500d7691782e15c5869961475c
 		<br>
 	</div>
 	<br>
 
 </div>
 @elseif ($cauhoi->MA_LOAI ==5)
+<<<<<<< HEAD
     <div class="container">
 	    <br>
 	    <div class=" col-sm-12">
@@ -492,6 +531,46 @@ function dichuyen(e) {
 		<br>
 	</div>
 	<br>
+=======
+        <div class="container">
+    <br>
+    <div class=" col-sm-12">
+        <video class="col-sm-12" height="320" controls style="max-width: 100%;">
+		  <source src="{!!asset($cauhoi->AUDIO_VIDEO)!!}" type="video/mp4">
+		  
+		</video>
+    </div>
+    <br>
+	  <div class=" col-sm-12">
+	<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
+		{!!$cauhoi->NOI_DUNG!!}
+		</div>
+		<br>
+		<br>
+
+	</div>
+	<br>
+	<?php $stt = $stt+1;?>
+		
+		<div id="dapan">
+				
+				<?php $dapan = App\DapAn::where('MA_CH','=',$cauhoi->MA_CH)->get(); ?>
+				@foreach( $dapan as $dapan)
+					<div class="col-sm-6">
+						@if($dapan->TRANGTHAI==1)
+						<button  data-toggle="modal" data-target="#myModal" onclick="setCorrectAnswer(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+						@else
+						<button data-toggle="modal" data-target="#myModalSai" onclick="setIncorrectAnswer(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+						@endif
+					</div>
+				@endforeach
+	</div>
+		<br>
+	</div>
+	<br>
+
+</div>
+>>>>>>> 45e6ec9e52b0f2500d7691782e15c5869961475c
 @endif
 
 {{-- <script>

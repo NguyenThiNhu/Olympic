@@ -84,11 +84,11 @@
 						
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="{!!url('/')!!}"><span data-hover="Trang Chủ">Trang Chủ</span></a></li>
-									<li><a href="{{url('vao-thi')}}"><span data-hover="Vào Thi">Vào Thi</span></a></li>
-									<li><a href="{{url('ket-qua-thi')}}"><span data-hover="Kết Quả Thi">Kết Quả Thi</span></a></li>
-									<li><a href="{!!url('gioi-thieu')!!}"><span data-hover="Giới Thiệu">Giới Thiệu</span></a></li>	
-									<li><a href="{{url('gop-y')}}"><span data-hover="Góp Ý">Góp Ý</span></a></li>
+									<li class="{!! Request::is('/') ? 'active' : '' !!}"><a href="{!!url('/')!!}"><span data-hover="Trang Chủ">Trang Chủ</span></a></li>
+									<li class="{!! Request::is('vao-thi') ? 'active' : '' !!}"><a href="{{url('vao-thi')}}"><span data-hover="Vào Thi">Vào Thi</span></a></li>
+									<li class="{!! Request::is('ket-qua-thi') ? 'active' : '' !!}"><a href="{{url('ket-qua-thi')}}"><span data-hover="Kết Quả Thi">Kết Quả Thi</span></a></li>
+									<li class="{!! Request::is('gioi-thieu') ? 'active' : '' !!}"><a href="{!!url('gioi-thieu')!!}"><span data-hover="Giới Thiệu">Giới Thiệu</span></a></li>	
+									<li class="{!! Request::is('gop-y') ? 'active' : '' !!}"><a href="{{url('gop-y')}}"><span data-hover="Góp Ý">Góp Ý</span></a></li>
 									
 								</ul>
 							</nav>

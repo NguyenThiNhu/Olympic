@@ -85,15 +85,15 @@
 		</form>
 		<ul class="nav menu">
 			<li class="active"><a href=""><i class="glyphicon glyphicon-home"></i> TRANG CHỦ</a></li>
-			<li ><a href="{{url('truong')}}" ><i class="glyphicon glyphicon-file"></i> Quản Lý Trường</a></li>
-			<li ><a href=""><i class="glyphicon glyphicon-tasks"></i> Quản Lý Loại Tin Tức</a></li>
-			<li ><a href=""><i class="glyphicon glyphicon-edit"></i> Quản Lý Tin Tức</a></li>
-			<li ><a href="{{url('de-thi')}}"><i class="glyphicon glyphicon-list-alt"></i> Quản Lý Đề Thi </a></li>
-			<li ><a href="{{url('ql-loaicauhoi')}}"><i class="glyphicon glyphicon-book"></i> Quản Lý Loại Câu Hỏi</a></li>
-			<li ><a href="{{url('ql-cauhoi')}}"><i class="glyphicon glyphicon-pencil"></i> Quản Lý Câu Hỏi</a></li>
+			<li class="{!! Request::is('truong') ? 'active' : '' !!}" ><a href="{{url('truong')}}" ><i class="glyphicon glyphicon-file"></i> Quản Lý Trường</a></li>
+			<li class="" ><a href=""><i class="glyphicon glyphicon-tasks"></i> Quản Lý Loại Tin Tức</a></li>
+			<li class=""><a href=""><i class="glyphicon glyphicon-edit"></i> Quản Lý Tin Tức</a></li>
+			<li class="{!! Request::is('de-thi') ? 'active' : '' !!}" ><a href="{{url('de-thi')}}"><i class="glyphicon glyphicon-list-alt"></i> Quản Lý Đề Thi </a></li>
+			<li class="{!! Request::is('ql-loaicauhoi') ? 'active' : '' !!}"><a href="{{url('ql-loaicauhoi')}}"><i class="glyphicon glyphicon-book"></i> Quản Lý Loại Câu Hỏi</a></li>
+			<li class="{!! Request::is('ql-cauhoi') ? 'active' : '' !!}"><a href="{{url('ql-cauhoi')}}"><i class="glyphicon glyphicon-pencil"></i> Quản Lý Câu Hỏi</a></li>
 			<li ><a href=""><i class="glyphicon glyphicon-user"></i> Quản Lý Người Dùng</a></li>
 			<li ><a href=""><i class="glyphicon glyphicon-signal"></i> Thống Kê</a></li>
-			<li><a href="{{url('xem-gop-y')}}"><i class="glyphicon glyphicon-comment"></i> Xem Góp Ý</a></li>
+			<li class="{!! Request::is('xem-gop-y') ? 'active' : '' !!}"><a href="{{url('xem-gop-y')}}"><i class="glyphicon glyphicon-comment"></i> Xem Góp Ý</a></li>
 						
 		</ul>
 		

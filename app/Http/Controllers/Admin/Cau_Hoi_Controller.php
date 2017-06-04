@@ -11,6 +11,8 @@ use App\CauHoi;
 use App\KET_QUA;
 use App\User;
 use Expression;
+use DB;
+
 
 class Cau_Hoi_Controller extends Controller
 {
@@ -54,7 +56,12 @@ class Cau_Hoi_Controller extends Controller
                 ->where('de_thi.MA_DE','=',$ma_de)
                 ->first();
                 $stt=$stt;
-            return view('User.baithi',compact('cauhoi','stt','ma_de'));
+           
+                if ($cauhoi == null) {
+                    $dethi = DeThi::all();
+                    return view('User.vaothi',compact('dethi'));
+                }
+                return view('User.baithi',compact('cauhoi','stt','ma_de'));
         }
         else
         {
