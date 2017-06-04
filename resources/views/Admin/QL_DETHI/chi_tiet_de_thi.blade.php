@@ -19,7 +19,6 @@
     @endif
        <h1 style="color: black; text-align: center;">Danh sách câu hỏi {!!$de_thi->TEN_DE!!}</h1>
       <div class="form-input clearfix">
-          <div class="label"></div>
           <div class="value"><a href="{!!url('them-cau-hoi',[$de_thi->MA_DE])!!}" class="btn btn-info">Thêm Câu Hỏi</a></div>
           <br>
       </div>           

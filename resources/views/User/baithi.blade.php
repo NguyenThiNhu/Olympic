@@ -140,11 +140,9 @@
     		position: absolute;
     		top: 160px;
     	}
-
 </style>
 <script>
-
-	function dichuyen(e) {
+function dichuyen(e) {
 		if (document.getElementById('backgroud_dabanh') == null)
 			dichuyen_bancung(e);
 		else
@@ -168,10 +166,8 @@
 	    if (pos == 250) {
 	      clearInterval(id);
 	      setCorrectAnswer(e);
-	      setTimeout(() =>{
-	      		console.log("{!!url('bai-thi',[$stt+1])!!}")
-	      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
-	      }, 900);
+	      
+	      
 	    } else {
 	      pos++;
 	      posx = pos;
@@ -194,10 +190,7 @@
 	    if (pos == 85) {
 	      clearInterval(id);
 	      setIncorrectAnswer(e);
-	      setTimeout(() =>{
-	      		console.log("{!!url('bai-thi',[$stt+1])!!}")
-	      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
-	      }, 900);
+	     
 	    } else {
 	      pos++;
 	      posx = pos;
@@ -227,12 +220,7 @@
 	    if (pos == 240) {
 	      clearInterval(id);
 	      setCorrectAnswer(e);
-	      setTimeout(() =>{
-	      		console.log("{!!url('bai-thi',[$stt+1])!!}")
-	      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
-	      }, 900);
-	      console.log('ss')
-	    } else {
+	      } else {
 	      pos++;
 	      current_top = current_top-1;
 	       //console.log(current_top);
@@ -265,7 +253,6 @@
 	 var right = 300;
 	 a.style.left = '300px';
 	  a.style.top = '350' + 'px'; 
-	   console.log(a.style + "555555s");
 	  var id = setInterval(frame, 3);
 	  function frame() {
 	    if (pos == 140) {
@@ -281,11 +268,7 @@
 	      	  		  console.log('ss')
 	      	  		 clearInterval(id2);
 	      	  		 setIncorrectAnswer(e);
-				      setTimeout(() =>{
-				      		console.log("{!!url('bai-thi',[$stt+1])!!}")
-				      		window.location = "{!!url('bai-thi',[$stt+1])!!}";
-				      }, 900);
-	      	  }
+				 }   
 	      	  else
 	      	  {
 	      	  		pos++;
@@ -335,6 +318,10 @@
 
 		console.log('------------------'+getCookie('total_correct_answer'))
 		//console.log(document.cookie);
+		setTimeout(() =>{
+	      		console.log("{!!url('bai-thi').'/'.$ma_de.'/'.($stt+1)!!}")
+	      		window.location = "{!!url('bai-thi').'/'.$ma_de.'/'.($stt+1)!!}";
+	     }, 900);
 	}
 	function setIncorrectAnswer(e){
 		console.log(e)
@@ -364,16 +351,22 @@
 		    return "";
 	}
 
+// 	window.addEventListener("load", function(){
+//     setTimeout(() => {
 
-
+//     }, $cauhoi->)
+// });;
 </script>
 
 
-<body>
+
+
+
 <!-- TL Dúng -->
 
 @if ($cauhoi->MA_LOAI ==1)
-    <div class="container">
+
+    <div class="container bb">
 	
 	<div id="Cauhoi">
 			@if(rand(0,1) == 0)
@@ -433,28 +426,74 @@
 	</div>
 @elseif ($cauhoi->MA_LOAI ==4)
     <div class="container">
-    <textarea class="form-control" rows="5" id="comment"></textarea>
-	<div id="tu-luan">
-	<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
-		{!!$cauhoi->NOI_DUNG!!}
+	    <br>
+	    <div class=" col-sm-12">
+	    	<audio controls class="col-sm-12" style="max-width: 100% display: inline-block;">
+	          <source src="{!!asset($cauhoi->AUDIO_VIDEO)!!}" type="audio/mp3">
+	        </audio>
+	    </div>
+	    <br>
+		     
+		<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
+			{!!$cauhoi->NOI_DUNG!!}
 		</div>
 		<br>
+
+		<?php $stt = $stt+1;?>
+		<div id="dapan">
+			<?php $dapan = App\DapAn::where('MA_CH','=',$cauhoi->MA_CH)->get(); ?>
+			@foreach( $dapan as $dapan)
+				<div class="col-sm-6">
+					@if($dapan->TRANGTHAI==1)
+					<button  data-toggle="modal" data-target="#myModal" onclick="setCorrectAnswer(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+					@else
+					<button data-toggle="modal" data-target="#myModalSai" onclick="setIncorrectAnswer(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+					@endif
+				</div>
+			@endforeach
+		</div>
+		<br>
+	</div>
+	<br>
 
 </div>
 @elseif ($cauhoi->MA_LOAI ==5)
     <div class="container">
-    <textarea class="form-control" rows="5" id="comment"></textarea>
-	<div id="tu-luan">
-	<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
-		{!!$cauhoi->NOI_DUNG!!}
+	    <br>
+	    <div class=" col-sm-12">
+	        <video class="col-sm-12" height="320" controls style="max-width: 100%;">
+			  <source src="{!!asset($cauhoi->AUDIO_VIDEO)!!}" type="video/mp4">
+			  
+			</video>
+	    </div>
+	    <br>
+	  	<div class=" col-sm-12">
+			<div id	="text_cauhoi" style="color: white; font-size: 20px;" >
+				{!!$cauhoi->NOI_DUNG!!}
+			</div>
+			<br>
+			<br>
 		</div>
 		<br>
-
-</div>
+		<?php $stt = $stt+1;?>
+		
+		<div id="dapan">
+			<?php $dapan = App\DapAn::where('MA_CH','=',$cauhoi->MA_CH)->get(); ?>
+			@foreach( $dapan as $dapan)
+				<div class="col-sm-6">
+					@if($dapan->TRANGTHAI==1)
+					<button  data-toggle="modal" data-target="#myModal" onclick="setCorrectAnswer(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+					@else
+					<button data-toggle="modal" data-target="#myModalSai" onclick="setIncorrectAnswer(this)" id="dap_an{!!$dapan->TRANGTHAI!!}" class="dapan1 btn btn-info btn-sl" value="{!!$dapan->TRANGTHAI!!}"><p class="chon" style="color: black;">{!!$dapan->NOI_DUNG!!}</p></button>
+					@endif
+				</div>
+			@endforeach
+		</div>
+		<br>
+	</div>
+	<br>
 @endif
 
-
-	
 {{-- <script>
 	$(document).ready(function(){
 		$('#dap_an1').click(function(){
@@ -462,5 +501,4 @@
 		});
 	});
 </script> --}}
-
 @endsection

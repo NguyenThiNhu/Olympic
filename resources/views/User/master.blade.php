@@ -40,18 +40,18 @@
 						<ul>
 							@if(Auth::guest())
 							<li>
+								<i class="glyphicon glyphicon-log-in"></i>
+								<a href="{{url('dang-nhap')}}" style="color: white; text-decoration: none;">Đăng Nhập</a>
+							</li>
+							<li>
 								<i class="glyphicon glyphicon-lock"></i>
 								<a href="{{url('dang-ky')}}" style="color: white; text-decoration: none;">Đăng Ký</a>
 								
 							</li>
-							<li>
-								<i class="glyphicon glyphicon-log-in"></i>
-								<a href="{{url('dang-nhap')}}" style="color: white; text-decoration: none;">Đăng Nhập</a>
-							</li>
 							@else
 							<li>
 								<i class="glyphicon glyphicon-user"></i>
-								<a href="" style="color: white; text-decoration: none;">Xin Chào: {!!Auth::user()->username!!}</a>
+								<a href="{{url('thong-tin-tai-khoan')}}" style="color: white; text-decoration: none;">Xin Chào: {!!Auth::user()->username!!}</a>
 								
 							</li>
 							<li>

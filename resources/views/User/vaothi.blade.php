@@ -28,7 +28,7 @@
                 <td style="color: black"><?php echo $pos++; ?></td>
                 <td  style="color: black" >{!!$dethi->TEN_DE!!}</td>
                 <td class="text-center" >
-                    <a href="{{url('bai-thi',1)}}" class="btn btn-danger btn-xs">
+                    <a href="{!!route('Bai_thi',[$dethi->MA_DE,1])!!}" class="btn btn-danger btn-xs">
                         <span class="glyphicon glyphicon-asterisk"></span> 
                         Bắt Đầu
                     </a>

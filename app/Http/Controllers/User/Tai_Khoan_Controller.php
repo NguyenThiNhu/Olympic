@@ -14,12 +14,8 @@ class Tai_Khoan_Controller extends Controller
     	return view('User.account.DangKy');
     }
     public function post_DK(Request $req){
-        if($req->username =" " && $req->ho_ten=" "&& $req->email=" "&&$req->birthDate =" ")
-            {
-                return redirect()->back()->with(['flash_message_erorr'=>'Bạn vui lòng nhập đầy đủ thông Tin ']);
-            }
-            else if($req->password == $req->repassword)
-            {
+        if($req->password == $req->repassword)
+        {
             
         	$lop = new Lop;
         	$lop->MA_TRUONG = $req->truong;
@@ -43,11 +39,12 @@ class Tai_Khoan_Controller extends Controller
     			$tai_khoan->GIOI_TINH = 'NAM';
     		else
     			$tai_khoan->GIOI_TINH = 'NỮ';
+            $tai_khoan->HINH_ANH = 'public/image/user/anh_dd.jpg';
         	$tai_khoan->QUYEN = 1;
         	$tai_khoan->save();
-        	return redirect('dang-nhap')->back()->with(['flash_message'=>'Bạn đã đăng ký thành công. Chúc mừng bạn..Mời bạn Đăng nhập!!']);
+        	return redirect()->route('Dang_nhap')->with(['flash_message'=>'Bạn đã đăng ký thành công. Chúc mừng bạn..Mời bạn Đăng nhập!!']);
         
-     }
+        }
         else
         {
             return redirect()->back()->with(['flash_message_erorr'=>'Mật khẩu không trùng khớp bạn vui lòng kiểm tra lại.']);

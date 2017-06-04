@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{!!asset('public/Olympic/css/dangnhap.css')!!}" type="text/css" media="all" />
 <script src="{!!asset('public/Olympic/js/dangnhap.js')!!}"></script>
 <div class="container">
+<br>
 <div class="row">
 		@if(Session::has('flash_message'))
 		<div class="alert alert-danger col-sm-12">
@@ -14,7 +15,7 @@
                 ×</button>
            <span class="glyphicon glyphicon-ok"></span> <strong>Thông Báo</strong>
             <hr class="message-inner-separator">
-            <p>{!! Session::get('flash_message') !!}</p>
+            <p style="color: #000; font-weight: bold;">{!! Session::get('flash_message') !!}</p>
         </div>
         @endif
 	</div>

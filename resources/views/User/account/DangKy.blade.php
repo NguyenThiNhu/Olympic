@@ -14,7 +14,7 @@
                 ×</button>
            <span class="glyphicon glyphicon-ok"></span> <strong>Thông Báo</strong>
             <hr class="message-inner-separator">
-            <p>{!! Session::get('flash_message') !!}</p>
+            <p style="color: #000;">{!! Session::get('flash_message') !!}</p>
         </div>
         @endif
 	</div>
@@ -25,7 +25,7 @@
                 ×</button>
            <span class="glyphicon glyphicon-ok"></span> <strong>Thông Báo</strong>
             <hr class="message-inner-separator">
-            <p>{!! Session::get('flash_message_erorr') !!}</p>
+            <p style="color: #000;">{!! Session::get('flash_message_erorr') !!}</p>
         </div>
         @endif
 	</div>
@@ -38,7 +38,7 @@
         	<div class="form-group">
 	            <label for="firstName" class="col-sm-3 control-label">Họ Tên:</label>
 	            <div class="col-sm-8">
-	                <input type="text" name="ho_ten" placeholder="Họ tên..." class="form-control" autofocus>
+	                <input type="text" name="ho_ten" placeholder="Họ tên..." class="form-control" required="true">
 	            </div>
 	        </div>
 	         <div class="form-group">
@@ -61,28 +61,28 @@
 	        <div class="form-group">
 	            <label for="username" class="col-sm-3 control-label">Tên Đăng Nhập:</label>
 	            <div class="col-sm-8">
-	                <input type="text" name="username" placeholder="Tên Đăng Nhập" class="form-control">
+	                <input type="text" name="username" placeholder="Tên Đăng Nhập" class="form-control" required="true">
 	            </div>
 	        </div>
 	        <div class="form-group">
 	            <label for="password" class="col-sm-3 control-label">Mật Khẩu:</label>
 	            <div class="col-sm-4">
-	                <input type="password" name="password" placeholder="Mật Khẩu" class="form-control">
+	                <input type="password" name="password" placeholder="Mật Khẩu" class="form-control" required="true">
 	            </div>
 	            <div class="col-sm-4">
-	                <input type="password" name="repassword" placeholder="Nhập lại mật khẩu" class="form-control">
+	                <input type="password" name="repassword" placeholder="Nhập lại mật khẩu" class="form-control" required="true">
 	            </div>
 	        </div>
 	         <div class="form-group">
 	            <label for="email" class="col-sm-3 control-label">Email:</label>
 	            <div class="col-sm-8">
-	                <input type="text" name="email" placeholder="Email" class="form-control">
+	                <input type="text" name="email" placeholder="Email" class="form-control" required="true">
 	            </div>
 	        </div>
 	        <div class="form-group">
 	            <label for="birthDate" class="col-sm-3 control-label">Ngày Sinh:</label>
 	            <div class="col-sm-8">
-	                <input type="date" name="birthDate" class="form-control">
+	                <input type="date" name="birthDate" class="form-control" required="true">
 	            </div>
 	        </div>
 	        <div class="form-group">
@@ -157,9 +157,9 @@
 	                </select>
 	            </div>
 	            <div class="col-sm-4">
-	                <input type="text" name="lop" placeholder="Tên lớp" class="form-control">
+	                <input type="text" name="lop" placeholder="Tên lớp" class="form-control" required="true">
 	            </div>
-	        </div> <!-- /.form-group -->
+	        </div> 
 	        <div class="form-group">
 	            <div class="col-sm-offset-4">
 	            	<div class="col-md-4">

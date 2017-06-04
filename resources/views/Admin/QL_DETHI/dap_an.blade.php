@@ -23,7 +23,7 @@
       @endif
       <div class="form-input clearfix">
           <div class="label"></div>
-          <div class="value"><a href="{{url('them-dap-an',[$cau_hoi->MA_CH])}}" class="btn btn-info">Thêm Đáp Án</a></div>
+          <div class="value"><a href="{{url('them-dap-an',[$cau_hoi->MA_CH])}}" class="btn btn-info">Thêm Đáp Án</a>  &nbsp;&nbsp;<a href="{!!url('chi-tiet-de-thi',[$cau_hoi->MA_DE])!!}" class="btn btn-warning">Về Chi Tiết Đề Thi</a></div>
           <br>
       </div>           
 		<div class="templatemo-content-widget no-padding">

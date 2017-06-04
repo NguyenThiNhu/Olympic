@@ -26,10 +26,28 @@ Route::get('dang-xuat',['as'=>'Dang_xuat','uses'=>'User\Dang_Nhap_Controller@Dan
 Route::get('gioi-thieu',['as'=>'Gioi_thieu','uses'=>'User\Gioi_Thieu_Controller@gioi_thieu']);
 
 Route:: get('dang-nhap',['as'=>'Dang_nhap', 'uses'=>'User\Dang_Nhap_Controller@show_DN']);
+
 Route:: post('dang-nhap',['as'=>'post_Dang_nhap', 'uses'=>'User\Dang_Nhap_Controller@DangNhap']);
+
+//Thong Tin
+Route::get('thong-tin-tai-khoan',['as'=>'thong_tin', 'uses'=>'User\Dang_Nhap_Controller@thong_tin']);
+
+Route::post('thong-tin-tai-khoan',['as'=>'post_thong_tin', 'uses'=>'User\Dang_Nhap_Controller@post_thong_tin']);
+
+
 /*Thi*/
 Route:: get('vao-thi',['as'=>'Vao_thi', 'uses'=>'Admin\De_Thi_Controller@vao_thi']);
-Route:: get('bai-thi/{stt}',['as'=>'Bai_thi', 'uses'=>'Admin\Cau_Hoi_Controller@lay_cau_hoi_bai_thi']);
+
+Route:: get('bai-thi/{ma_de}/{stt}',['as'=>'Bai_thi', 'uses'=>'Admin\Cau_Hoi_Controller@lay_cau_hoi_bai_thi']);
+
+//Cham_diem
+Route::get('cham-diem/{ma_de}/{ma_ch}/{ma_da}/{stt}',['as'=>'cham_diem', 'uses'=>'Admin\Cau_Hoi_Controller@cham_diem']);
+//end Cham diem
+
+Route::get('hoan-thanh-bai-thi',['as'=>'hoan_thanh', 'uses'=>'Admin\Cau_Hoi_Controller@hoan_thanh']);
+
+Route::get('ket-thuc-bai-thi',['as'=>'ket_thuc_bai_thi', 'uses'=>'Admin\Cau_Hoi_Controller@ket_thuc']);
+
 Route:: get('ket-qua-thi',['as'=>'Ket_qua_thi', 'uses'=>'Admin\Cau_Hoi_Controller@ket_qua_thi']);
 
 

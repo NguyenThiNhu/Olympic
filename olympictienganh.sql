@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2017 at 06:17 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.0.15
+-- Generation Time: Jun 03, 2017 at 10:50 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `olympictienganh1`
+-- Database: `olympictienganh`
 --
 
 -- --------------------------------------------------------
@@ -143,7 +143,7 @@ INSERT INTO `cau_hoi` (`MA_CH`, `MA_LOAI`, `MA_DE`, `NOI_DUNG`, `AUDIO_VIDEO`, `
 (76, 1, 10, 'How old are you?', NULL, 30, 2, '2017-05-26 21:54:19', '2017-05-28 15:37:53'),
 (77, 1, 10, 'What is he doing?', NULL, 30, 3, '2017-05-26 21:54:19', '2017-05-28 15:37:53'),
 (78, 1, 10, 'What are they playing?', NULL, 30, 4, '2017-05-26 21:54:19', '2017-05-28 15:37:53'),
-(79, 1, 10, 'What\'s the weather like today?', NULL, 30, 5, '2017-05-26 21:54:19', '2017-05-28 15:37:53'),
+(79, 1, 10, 'What''s the weather like today?', NULL, 30, 5, '2017-05-26 21:54:19', '2017-05-28 15:37:53'),
 (80, 1, 10, 'Has she got a robot?', NULL, 30, 6, '2017-05-26 21:54:19', '2017-05-28 15:37:53'),
 (81, 1, 10, 'How many goldfish have you got?', NULL, 30, 7, '2017-05-26 21:54:19', '2017-05-28 15:37:53'),
 (82, 1, 10, 'How many bedrooms are there in your house?', NULL, 30, 8, '2017-05-26 21:54:19', '2017-05-28 15:37:53'),
@@ -201,7 +201,7 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (7, 2, 'is', 0, '2017-04-25 17:00:00', NULL),
 (8, 2, 'have', 0, '2017-04-25 17:00:00', NULL),
 (9, 3, 'have', 1, NULL, NULL),
-(10, 4, 'It\'s a pen', 0, NULL, NULL),
+(10, 4, 'It''s a pen', 0, NULL, NULL),
 (11, 5, 'what', 0, NULL, NULL),
 (12, 6, 'polite', 1, NULL, NULL),
 (13, 7, 'Keep', 0, NULL, NULL),
@@ -273,7 +273,7 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (79, 73, 'they are', 1, NULL, NULL),
 (80, 74, 'Yes, I can not', 0, NULL, NULL),
 (81, 3, 'has', 0, NULL, NULL),
-(82, 4, 'It\'s a pencil', 1, NULL, NULL),
+(82, 4, 'It''s a pencil', 1, NULL, NULL),
 (83, 5, 'is', 0, NULL, NULL),
 (84, 6, 'impolite', 0, NULL, NULL),
 (85, 7, 'idea', 0, NULL, NULL),
@@ -345,7 +345,7 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (151, 73, 'they do', 0, NULL, NULL),
 (152, 74, 'No, I can', 0, NULL, NULL),
 (153, 3, 'had', 0, NULL, NULL),
-(154, 4, 'It\'s a ruler', 0, NULL, NULL),
+(154, 4, 'It''s a ruler', 0, NULL, NULL),
 (155, 5, 'spell', 1, NULL, NULL),
 (156, 6, 'rude', 0, NULL, NULL),
 (157, 7, 'attract', 1, NULL, NULL),
@@ -417,7 +417,7 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (223, 73, 'are they', 0, NULL, NULL),
 (224, 74, 'No, I can not', 1, NULL, NULL),
 (225, 3, 'is', 0, NULL, NULL),
-(226, 4, 'It\'s a rubber', 0, NULL, NULL),
+(226, 4, 'It''s a rubber', 0, NULL, NULL),
 (227, 5, 'how', 0, NULL, NULL),
 (228, 6, 'B & C are correct', 0, NULL, NULL),
 (229, 7, 'raise', 0, NULL, NULL),
@@ -490,10 +490,25 @@ INSERT INTO `dap_an` (`id`, `MA_CH`, `NOI_DUNG`, `TRANGTHAI`, `created_at`, `upd
 (296, 74, 'Yes, I do', 0, NULL, NULL),
 (298, 135, 'I am 25 years old.', 1, '2017-05-28 07:36:36', '2017-05-28 07:36:36'),
 (299, 135, 'I am 25 year', 0, '2017-05-28 07:37:05', '2017-05-28 07:37:05'),
-(300, 135, 'I\'m 25 old', 0, '2017-05-28 07:37:23', '2017-05-28 07:37:23'),
+(300, 135, 'I''m 25 old', 0, '2017-05-28 07:37:23', '2017-05-28 07:37:23'),
 (301, 135, 'I am 25', 0, '2017-05-28 07:37:41', '2017-05-28 07:37:41'),
 (302, 162, 'And-really-think-about-it-What-could-possibly-go-wrong', 1, '2017-05-28 09:53:05', '2017-05-28 09:53:05'),
-(303, 162, 'And-really-think-What-could-possibly-go-wrong', 0, '2017-05-28 09:53:34', '2017-05-28 09:53:34');
+(303, 162, 'And-really-think-What-could-possibly-go-wrong', 0, '2017-05-28 09:53:34', '2017-05-28 09:53:34'),
+(304, 148, 'He takes a school bus every morning.', 0, '2017-06-03 07:36:10', '2017-06-03 07:36:10'),
+(305, 148, 'He rides the subway at 8:00 AM', 1, '2017-06-03 07:38:09', '2017-06-03 07:38:09'),
+(306, 148, 'He walks with a group of students', 0, '2017-06-03 07:38:49', '2017-06-03 07:38:49'),
+(307, 149, 'backpack', 1, '2017-06-03 07:45:28', '2017-06-03 07:45:28'),
+(308, 149, 'gym clothes', 0, '2017-06-03 07:45:41', '2017-06-03 07:45:41'),
+(309, 149, 'school hat', 0, '2017-06-03 07:45:50', '2017-06-03 07:45:50'),
+(310, 150, 'He practices his reading and writing.', 0, '2017-06-03 07:48:28', '2017-06-03 07:48:28'),
+(311, 150, 'He stands and bows to the teacher.', 1, '2017-06-03 07:49:06', '2017-06-03 07:49:06'),
+(312, 150, 'He put on his gym clothes for class.', 0, '2017-06-03 07:50:48', '2017-06-03 07:50:48'),
+(313, 151, 'in his classroom', 1, '2017-06-03 07:51:23', '2017-06-03 07:51:23'),
+(314, 151, 'in the lunchroom', 0, '2017-06-03 07:51:34', '2017-06-03 07:51:34'),
+(315, 151, 'in the gymnasium', 0, '2017-06-03 07:51:54', '2017-06-03 07:51:54'),
+(316, 152, 'between 1:00 PM and 2:00 PM', 1, '2017-06-03 07:52:29', '2017-06-03 07:52:29'),
+(317, 152, 'between 2:00 PM and 3:00 PM', 0, '2017-06-03 07:52:42', '2017-06-03 07:52:42'),
+(318, 152, 'between 3:00 PM and 4:00 PM', 0, '2017-06-03 07:53:01', '2017-06-03 07:53:01');
 
 -- --------------------------------------------------------
 
@@ -586,11 +601,23 @@ INSERT INTO `gop_y` (`MA_GY`, `TEN_ND`, `EMAIL`, `NOI_DUNG`, `created_at`, `upda
 CREATE TABLE `ket_qua` (
   `MA_KQ` int(10) UNSIGNED NOT NULL,
   `MA_TK` int(10) UNSIGNED NOT NULL,
+  `MA_DE` int(11) NOT NULL,
   `NGAY_GIO_THI` datetime NOT NULL,
   `DIEM_SO` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `ket_qua`
+--
+
+INSERT INTO `ket_qua` (`MA_KQ`, `MA_TK`, `MA_DE`, `NGAY_GIO_THI`, `DIEM_SO`, `created_at`, `updated_at`) VALUES
+(1, 1, 3, '2017-05-31 18:30:14', 70, '2017-05-31 11:30:14', '2017-05-31 11:30:14'),
+(2, 1, 1, '2017-05-31 23:42:32', 80, '2017-05-31 16:42:32', '2017-05-31 16:42:32'),
+(3, 4, 6, '2017-06-02 22:56:26', 70, '2017-06-02 15:56:26', '2017-06-02 15:56:26'),
+(4, 5, 5, '2017-06-02 23:23:44', 50, '2017-06-02 16:23:44', '2017-06-02 16:23:44'),
+(5, 4, 14, '2017-06-03 14:54:26', 30, '2017-06-03 07:54:26', '2017-06-03 07:54:26');
 
 -- --------------------------------------------------------
 
@@ -650,7 +677,9 @@ CREATE TABLE `lop` (
 INSERT INTO `lop` (`MA_LOP`, `MA_TRUONG`, `TEN_LOP`, `created_at`, `updated_at`) VALUES
 (1, 11, 'Lớp 1A', '2017-04-25 10:20:20', '2017-04-25 10:20:20'),
 (2, 4, 'Lớp 12A', '2017-04-25 17:20:38', '2017-04-25 17:20:38'),
-(3, 19, 'Lớp 2A', '2017-04-26 17:12:28', '2017-04-26 17:12:28');
+(3, 19, 'Lớp 2A', '2017-04-26 17:12:28', '2017-04-26 17:12:28'),
+(4, 1151, 'Lớp 10T2', '2017-06-02 15:49:03', '2017-06-02 15:49:03'),
+(5, 12, 'Lớp 2A', '2017-06-02 16:17:28', '2017-06-02 16:17:28');
 
 -- --------------------------------------------------------
 
@@ -1183,14 +1212,14 @@ INSERT INTO `quan_huyen` (`MA_QH`, `MA_TINH`, `TEN_QH`, `created_at`, `updated_a
 (3252, 294, 'Chư Pưh', NULL, NULL),
 (3253, 295, 'Buôn Ma Thuột', NULL, NULL),
 (3254, 295, 'Buôn Hồ', NULL, NULL),
-(3255, 295, 'Ea H\'leo', NULL, NULL),
+(3255, 295, 'Ea H''leo', NULL, NULL),
 (3256, 295, 'Ea Súp', NULL, NULL),
 (3257, 295, 'Buôn Đôn', NULL, NULL),
-(3258, 295, 'Cư M\'gar', NULL, NULL),
+(3258, 295, 'Cư M''gar', NULL, NULL),
 (3259, 295, 'Krông Búk', NULL, NULL),
 (3260, 295, 'Krông Năng', NULL, NULL),
 (3261, 295, 'Ea Kar', NULL, NULL),
-(3262, 295, 'M\'đrắk', NULL, NULL),
+(3262, 295, 'M''đrắk', NULL, NULL),
 (3263, 295, 'Krông Bông', NULL, NULL),
 (3264, 295, 'Krông Pắc', NULL, NULL),
 (3265, 295, 'Krông A Na', NULL, NULL),
@@ -1202,7 +1231,7 @@ INSERT INTO `quan_huyen` (`MA_QH`, `MA_TINH`, `TEN_QH`, `created_at`, `updated_a
 (3271, 296, 'Đắk Mil', NULL, NULL),
 (3272, 296, 'Krông Nô', NULL, NULL),
 (3273, 296, 'Đắk Song', NULL, NULL),
-(3274, 296, 'Đắk R\'lấp', NULL, NULL),
+(3274, 296, 'Đắk R''lấp', NULL, NULL),
 (3275, 296, 'Tuy Đức', NULL, NULL),
 (3276, 297, 'Đà Lạt', NULL, NULL),
 (3277, 297, 'Bảo Lộc', NULL, NULL),
@@ -2739,6 +2768,7 @@ CREATE TABLE `users` (
   `EMAIL` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `NGAY_SINH` date DEFAULT NULL,
   `GIOI_TINH` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `HINH_ANH` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `QUYEN` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -2749,10 +2779,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `MA_LOP`, `HO_TEN`, `EMAIL`, `NGAY_SINH`, `GIOI_TINH`, `QUYEN`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'nhu1234', '$2y$10$MVshXa2IAKuYTZDR9CpkyeJHAKZt.vWZGr5qCEYggEgp8eqt9c7PW', 1, 'Nguyễn Thị Như', 'nhu@gmail.com', '2017-04-14', 'NỮ', '1', 'xBgMuFukQkdbqkKJAV6eIgmwTmWvyMq0CniIyh7OMLuKJQ1XJRa1T3A9jid7', '2017-04-25 10:20:21', '2017-04-25 10:20:21'),
-(2, 'admin', '$2y$10$SsQeVEOI2HluRkcVb.H3M.AcHe9alr.IxKeYWxGBQjY2EfdXrvb9u', 2, 'admin', 'ntnhu@gmail.com', '2017-03-28', 'NAM', '2', 'uxzQcIMZBOHNaciIP7hVnNIHlS3uRfYujIQkHuroLCpGqyeoFWPcC2sixQR6', '2017-04-25 17:20:39', '2017-04-25 17:20:39'),
-(3, 'huu1212', '$2y$10$7sHUekdt.TJS6b1kETY3oOa1jUSY/n.suygs7dsO37SoXTWkKzrq.', 3, 'TCH', 'huuuac@gmail.com', '2017-04-03', 'NAM', '1', '2IEL8eZysFNRrZqC1q7Uv9L35FPLeIKRwPyI8s2Q4CqBn0M1DG5Q3b47W9GN', '2017-04-26 17:12:28', '2017-04-26 17:12:28');
+INSERT INTO `users` (`id`, `username`, `password`, `MA_LOP`, `HO_TEN`, `EMAIL`, `NGAY_SINH`, `GIOI_TINH`, `HINH_ANH`, `QUYEN`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'nhu1234', '$2y$10$ry6k2DDjTiZMWfWlfNFEteX5mCMhFVI5TV/K1KhXQYtcW47GPlPiu', 1, 'Nguyễn Thị Như', 'nhu@gmail.com', '1994-09-30', 'NỮ', 'public/image/user/nhu.jpg', '1', 'yApwYzhrZfPUJSkymqnn5u4NerO9WDdesBm9f0E5tnSgY5HISadPtvrB2Hct', '2017-04-25 10:20:21', '2017-06-02 18:25:32'),
+(2, 'admin', '$2y$10$SsQeVEOI2HluRkcVb.H3M.AcHe9alr.IxKeYWxGBQjY2EfdXrvb9u', 2, 'admin', 'ntnhu@gmail.com', '2017-03-28', 'NAM', 'public/image/user/anh_dd.jpg', '2', 'oD2WiTowJQ8QGqGalLesjQ7PPfzVxeV6bwClklPgCgIUl3hqOZIQOdiXoroz', '2017-04-25 17:20:39', '2017-04-25 17:20:39'),
+(4, 'khoi123', '$2y$10$0d/94ckVhXLa9L7G86Cwv.ebXa10YGzLWwcw2RigZaCSL5StkkSp2', 4, 'Phạm Nguyễn Minh Khôi', 'khoiga@gmail.com', '2005-12-27', 'NAM', 'public/image/user/chi_cartoon.jpg', '1', 'uJiREf3Bf9HR6UXkBsCnvqxd3OrfBiaXOKhAN2ApobXDl9SkV4DjpmjY6IED', '2017-06-02 15:49:03', '2017-06-02 18:25:52'),
+(5, 'huu1212', '$2y$10$sS3ma1V7kprLeqMvpcyZR.p/YwUlQb0yQC6vH9JGbiKO6GjzGzKlG', 5, 'Trần Chí Hữu', 'huu123@gmail.com', '2005-05-12', 'NAM', 'public/image/user/huu.jpg', '1', 'lBdUmvs5StL1lrwxIM29RsbPS3TQwccpT2HnhE5MtQVJfVrdLxf7aj53Ylxd', '2017-06-02 16:17:28', '2017-06-02 18:23:52');
 
 --
 -- Indexes for dumped tables
@@ -2884,7 +2915,7 @@ ALTER TABLE `cau_hoi`
 -- AUTO_INCREMENT for table `dap_an`
 --
 ALTER TABLE `dap_an`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=304;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=319;
 --
 -- AUTO_INCREMENT for table `de_thi`
 --
@@ -2899,7 +2930,7 @@ ALTER TABLE `gop_y`
 -- AUTO_INCREMENT for table `ket_qua`
 --
 ALTER TABLE `ket_qua`
-  MODIFY `MA_KQ` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `MA_KQ` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `loai_cau_hoi`
 --
@@ -2914,7 +2945,7 @@ ALTER TABLE `loai_tin_tuc`
 -- AUTO_INCREMENT for table `lop`
 --
 ALTER TABLE `lop`
-  MODIFY `MA_LOP` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MA_LOP` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -2944,7 +2975,7 @@ ALTER TABLE `truong`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
